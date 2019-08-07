@@ -7,7 +7,14 @@ block content
   h4 Searching #{title} With The Location You Enter Below
   form(name="add-estimation", method="get", action='/parking')
     div.input
-      span.label Location: 
-      input(type="text", name="latLong", placeholder="Lat, Long (0.543,50.321)")
+      span.label Lat: 
+      input(type="text", name="lat", placeholder="0.543")
+      span.label &nbsp
+      span.label Long: 
+      input(type="text", name="long", placeholder="50.452")
+      span.label &nbsp
+      span.label Radius: 
+      input(type="text", name="radius", placeholder="5000")
       span.label &nbsp
       input(type="submit", value="Search")
+  h5 Bristol : Lat: 51.454514 Long: -2.587910 Radius: 15000

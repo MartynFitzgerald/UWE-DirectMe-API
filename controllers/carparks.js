@@ -1,12 +1,14 @@
 var request = require("request");
 var dbController = require('../controllers/dbconnection');
 
+var testData = [];
+var relevantCarParks = [];
+
 exports.carparks_get_all = function(req, res, next) {
     // Get values from the GET request and set them as varibles.
     var lat = req.query.lat;
     var lng = req.query.lng;
     var radius = req.query.radius;
-    var relevantCarParks = [];
 
     /* 
         Find the car parks within the distance from the users Point
@@ -35,7 +37,6 @@ exports.carparks_get_all = function(req, res, next) {
     });
 }
 
-var testData = [];
 function getParkingDataTwo(url, nextPageToken = null, callback) {
     var currentUrl = url;
   

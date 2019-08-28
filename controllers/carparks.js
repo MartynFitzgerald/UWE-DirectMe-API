@@ -1,5 +1,5 @@
 var request = require("request");
-var dbController = require('../controllers/dbconnection');
+var dbController = require('./dbconnection');
 
 var testData = [];
 var relevantCarParks = [];

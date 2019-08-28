@@ -42,7 +42,6 @@ function getParkingDataTwo(url, nextPageToken = null, callback) {
     if (nextPageToken) {
       currentUrl += "&pagetoken=" + nextPageToken;
     }
-  
     //console.log("currentUrl", currentUrl);
   
     request({url: currentUrl}, function(error, response, body) {
@@ -65,13 +64,9 @@ function getParkingDataTwo(url, nextPageToken = null, callback) {
   }
 
 exports.carparks_insert_all = function(req, res, next) {
-    /* Create The URL to the API 
-    var url2 = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?" +
-      "type=parking" +
-      "&radius=" + radius +
-      "&location=" + lat + "," + lng +
-      "&key=AIzaSyBeMKzk8ZpyU2Hk_lrVmlO-Ggq1tQqtYsM"*/
-  
+    // Create The URL to the API 
+    //var url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?type=parking&radius=${radius}&location=${lat},${lng}&key=AIzaSyBeMKzk8ZpyU2Hk_lrVmlO-Ggq1tQqtYsM`
+    
     var url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?type=parking&radius=5000&location=51.454514,-2.587910&key=AIzaSyBeMKzk8ZpyU2Hk_lrVmlO-Ggq1tQqtYsM";
     getParkingDataTwo(url, null, function(error, result) {
       if (result[0].results.length > 0) { //If there are results, then...
@@ -91,7 +86,7 @@ exports.carparks_insert_all = function(req, res, next) {
         //TODO: before returning to the user, save all new records to the database
         dbController.connection.query(sql, function(error, result, fields) {
           //console.log(result);
-          return res.json(result);
+          return res.json(testData);
         });
   
       } else {

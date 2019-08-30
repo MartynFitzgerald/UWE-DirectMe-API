@@ -6,13 +6,13 @@ block content
   hr
 
   h3 Searching #{title} With The Location You Enter Below
-  form(name="add-estimation", method="get", action='/api/carparks')
+  form(name="add-estimation", method="GET", action='/api/carparks')
     div.input
       span.label Lat: 
-      input(type="text", name="lat", placeholder="51.4545")
+      input(type="text", name="latitude", placeholder="51.4545")
       span.label &nbsp
       span.label Long: 
-      input(type="text", name="lng", placeholder="-2.5879")
+      input(type="text", name="longitude", placeholder="-2.5879")
       span.label &nbsp
       span.label Radius: 
       input(type="text", name="radius", placeholder="5000")
@@ -21,22 +21,22 @@ block content
 
   hr
   h3 GET All Scraping Locations
-    h5 Id: 12345 See #[a(href="/api/scrapinglocations/") #{"http://127.0.0.1:3000/api/scrapinglocations/"}]
+    h5 See #[a(href="/api/scrapinglocations/") #{"http://127.0.0.1:3000/api/scrapinglocations/"}]
 
   h3 GET One Scraping Locations
-    h5 Id: 12345 See #[a(href="/api/scrapinglocations/12345") #{"http://127.0.0.1:3000/api/scrapinglocations/12345"}]
+    h5 Id: 1 See #[a(href="/api/scrapinglocations/1") #{"http://127.0.0.1:3000/api/scrapinglocations/1"}]
 
   h3 INSERT New Scraping Locations
-  form(name="add-estimation", method="post", action='/api/scrapinglocations')
+  form(name="add-estimation", method="POST", action='/api/scrapinglocations')
     div.input
       span.label Name: 
-      input(type="text", name="Name", placeholder="Bristol")
+      input(type="text", name="name", placeholder="Bristol")
       span.label &nbsp
       span.label Lat: 
-      input(type="text", name="lat", placeholder="51.4545")
+      input(type="text", name="latitude", placeholder="51.4545")
       span.label &nbsp
       span.label Long: 
-      input(type="text", name="lng", placeholder="-2.5879")
+      input(type="text", name="longitude", placeholder="-2.5879")
       span.label &nbsp
       span.label Radius: 
       input(type="text", name="radius", placeholder="5000")

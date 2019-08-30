@@ -12,9 +12,6 @@ router.get('/', function(req, res, next) {
 /* GET carparks from the db. */
 router.get('/api/carparks', carparkController.carparks_get_all);
 
-/* GET carparks from the API. */
-router.get('/api/parking/carparks', carparkController.carparks_insert_all);
-
 /* GET All Scrapings Location from the db. */
 router.get('/api/scrapinglocations/', scrapingLocationsController.scraping_get_all);
 

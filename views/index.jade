@@ -20,14 +20,25 @@ block content
       input(type="submit", value="Search")
 
   hr
+  h3 GET relavent car park  Locations
+    h5 See #[a(href="/api/carpark/51.4545/-2.5879/500") #{"http://127.0.0.1:3000/api/carpark/51.4545/-2.5879/500"}]
+
+  h3 GET All car park  Locations
+    h5 See #[a(href="/api/carpark/") #{"http://127.0.0.1:3000/api/carpark/"}]
+
+  h3 GET One car park Locations
+    h5 Id: 1 See #[a(href="/api/carpark/1") #{"http://127.0.0.1:3000/api/carpark/1"}]
+
+  hr
+
   h3 GET All Scraping Locations
-    h5 See #[a(href="/api/scrapinglocations/") #{"http://127.0.0.1:3000/api/scrapinglocations/"}]
+    h5 See #[a(href="/api/scrapinglocation/") #{"http://127.0.0.1:3000/api/scrapinglocation/"}]
 
   h3 GET One Scraping Locations
-    h5 Id: 1 See #[a(href="/api/scrapinglocations/1") #{"http://127.0.0.1:3000/api/scrapinglocations/1"}]
+    h5 Id: 1 See #[a(href="/api/scrapinglocation/1") #{"http://127.0.0.1:3000/api/scrapinglocation/1"}]
 
   h3 INSERT New Scraping Locations
-  form(name="add-estimation", method="POST", action='/api/scrapinglocations')
+  form(name="add-estimation", method="POST", action='/api/scrapinglocation')
     div.input
       span.label Name: 
       input(type="text", name="name", placeholder="Bristol")

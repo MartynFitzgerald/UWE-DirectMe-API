@@ -14,7 +14,7 @@
 var dbController = require('./dbconnection');
 
 exports.scraping_get_all = function(req, res, next) {
-  var sql = "SELECT * FROM scrapinglocations";
+  var sql = "SELECT * FROM scraping_location";
 
   dbController.connection.query(sql, function (error, results, fields) {
     if (results.length > 0) {
@@ -35,7 +35,7 @@ exports.scraping_get_all = function(req, res, next) {
 
 exports.scraping_get_one = function(req, res, next) {
   var id = req.param('id');
-  var sql = `SELECT * FROM scrapinglocations WHERE id='${id}'`;
+  var sql = `SELECT * FROM scraping_location WHERE id='${id}'`;
   
   dbController.connection.query(sql, function (error, results, fields) {
     if (results.length > 0) {
@@ -60,7 +60,7 @@ exports.scraping_insert_one = function(req, res, next) {
   var longitude = req.body.longitude;
   var radius = req.body.radius;
 
-  var sql = `INSERT IGNORE INTO scrapinglocations (name, latitude, longitude, radius) VALUES ('${name}', '${latitude}', '${longitude}', ${radius});`;
+  var sql = `INSERT IGNORE INTO scraping_location (name, latitude, longitude, radius) VALUES ('${name}', '${latitude}', '${longitude}', ${radius});`;
 
   dbController.connection.query(sql, function (error, results, fields) {
     console.log(results);
@@ -82,7 +82,7 @@ exports.scraping_insert_one = function(req, res, next) {
 
 exports.scraping_delete_one = function(req, res, next) {
   var id = req.param('id');
-  var sql = `DELETE FROM scrapinglocations WHERE id='${id}'`;
+  var sql = `DELETE FROM scraping_location WHERE id='${id}'`;
   
   dbController.connection.query(sql, function (error, results, fields) {
     if (results.affectedRows> 0) {

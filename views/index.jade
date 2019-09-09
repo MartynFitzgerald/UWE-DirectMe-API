@@ -4,40 +4,24 @@ block content
   h1= title
 
   hr
-
-  h3 Searching #{title} With The Location You Enter Below
-  form(name="add-estimation", method="GET", action='/api/carparks')
-    div.input
-      span.label Lat: 
-      input(type="text", name="latitude", placeholder="51.4545")
-      span.label &nbsp
-      span.label Long: 
-      input(type="text", name="longitude", placeholder="-2.5879")
-      span.label &nbsp
-      span.label Radius: 
-      input(type="text", name="radius", placeholder="5000")
-      span.label &nbsp
-      input(type="submit", value="Search")
-
-  hr
-  h3 GET relavent car park  Locations
+  h3 GET relavent car park  locations
     h5 See #[a(href="/api/carpark/51.4545/-2.5879/500") #{"http://127.0.0.1:3000/api/carpark/51.4545/-2.5879/500"}]
 
-  h3 GET All car park  Locations
+  h3 GET All car park  locations
     h5 See #[a(href="/api/carpark/") #{"http://127.0.0.1:3000/api/carpark/"}]
 
-  h3 GET One car park Locations
+  h3 GET One car park locations
     h5 Id: 1 See #[a(href="/api/carpark/1") #{"http://127.0.0.1:3000/api/carpark/1"}]
 
   hr
 
-  h3 GET All Scraping Locations
+  h3 GET All scraping locations
     h5 See #[a(href="/api/scrapinglocation/") #{"http://127.0.0.1:3000/api/scrapinglocation/"}]
 
-  h3 GET One Scraping Locations
+  h3 GET One scraping locations
     h5 Id: 1 See #[a(href="/api/scrapinglocation/1") #{"http://127.0.0.1:3000/api/scrapinglocation/1"}]
 
-  h3 INSERT New Scraping Locations
+  h3 INSERT New scraping locations
   form(name="add-estimation", method="POST", action='/api/scrapinglocation')
     div.input
       span.label Name: 

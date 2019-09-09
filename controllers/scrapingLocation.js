@@ -7,7 +7,7 @@
 |   Instructor:  Paul Raynor
 |     Due Date:  30/03/2019
 |
-|    File Name:  scrapingLocations.js  
+|    File Name:  scrapingLocation.js  
 |  Description:  This is the logic behind the scraping location API which
 |                includes GET ALL, GET ONE, INSERT ONE and DELETE ONE
 *===========================================================================*/

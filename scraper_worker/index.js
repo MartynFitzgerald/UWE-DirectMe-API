@@ -1,3 +1,16 @@
+/*=============================================================================
+|      Editors:  Martyn Fitzgerald - 16025948
+|
+|  Module Code:  UFCFR4-45-3
+| Module Title:  Computing Project
+|
+|   Instructor:  Paul Raynor
+|     Due Date:  30/03/2019
+|
+|    File Name:  scraper_worker/index.js  
+|  Description:  This is the worker that will be fetching data from the Google's
+|                API and INSERT it into the database.
+*===========================================================================*/
 var request = require("request");
 var mysql = require('mysql');
 var moment = require('moment');

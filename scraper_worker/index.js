@@ -100,13 +100,14 @@ function carparksInsert(lat, lng, radius, scrapingLocationId) {
         //var userRatingsTotal = carpark.user_ratings_total;
         //var photos = null;
 
-        var sql = `INSERT IGNORE INTO car_park (scraping_location_id, external_id, external_provider, name, latitude, longitute, last_updated_at) VALUES ('${scrapingLocationId}', '${externalId}','${externalProvider}','${name}','${latitude}', '${longitude}', '${lastUpdatedAt}');`;
+        var sql = `INSERT IGNORE INTO car_park (scraping_location_id, external_id, external_provider, name, latitude, longitude, last_updated_at) VALUES ('${scrapingLocationId}', '${externalId}','${externalProvider}','${name}','${latitude}', '${longitude}', '${lastUpdatedAt}');`;
        
         var connection = getDatabaseConnection();
         //TODO: before returning to the user, save all new records to the database
         connection.query(sql, function(error, result, fields) {
           if (error) {
-            return callback(error);
+            console.error('Failed to get request data from google api', error);
+            process.exit();
           }
         });
       }

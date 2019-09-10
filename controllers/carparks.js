@@ -21,10 +21,10 @@ exports.carpark_get_relevant  = function(req, res, next) {
       Find the car parks within the distance from the users Point
       https://stackoverflow.com/questions/29916341/geo-location-radius-search-using-php-and-mysql
   */
-  var sql = `SELECT name, latitude, longitude, SQRT(
+  var sql = `SELECT *, (SQRT(
     POW(69.1 * (latitude - '${latitude}'), 2) +
-    POW(69.1 * ('${longitude}' - longitude) * COS(latitude / 57.3), 2)) AS distance
-    FROM car_park HAVING distance < '${radius / 1609.344}' ORDER BY distance`;
+    POW(69.1 * ('${longitude}' - longitude) * COS(latitude / 57.3), 2)) * 1609.344) AS distance
+    FROM car_park HAVING distance < '${radius}' ORDER BY distance`;
 
   dbController.connection.query(sql, function (error, results, fields) {
     if (error)

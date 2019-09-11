@@ -41,15 +41,15 @@ router.get('/api/carpark', carparkController.GetForUserLocation);
 
 
 /* GET All Scrapings Location from the db. */
-router.get('/api/scrapinglocation/', scrapingLocationController.scraping_get_all);
+router.get('/api/scrapinglocation/', scrapingLocationController.GetAll);
 
 /* GET Scrapings Location from the db. */
-router.get('/api/scrapinglocation/:id', scrapingLocationController.scraping_get_one);
+router.get('/api/scrapinglocation/:id', scrapingLocationController.GetById);
 
 /* INSERT Scrapings Location into the db. */
-router.post('/api/scrapinglocation/', scrapingLocationController.scraping_insert_one);
+router.post('/api/scrapinglocation/', scrapingLocationController.Insert);
 
 /* DELETE Scrapings Location from the db. */
-router.delete('/api/scrapinglocation/:id', scrapingLocationController.scraping_delete_one);
+router.delete('/api/scrapinglocation/:id', scrapingLocationController.DeleteById);
 
 module.exports = router;

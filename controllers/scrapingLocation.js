@@ -13,7 +13,7 @@
 *===========================================================================*/
 var dbController = require('./dbconnection');
 
-exports.scraping_get_all = function(req, res, next) {
+exports.GetAll = function(req, res, next) {
   var sql = "SELECT * FROM scraping_location";
 
   dbController.connection.query(sql, function (error, results, fields) {
@@ -33,7 +33,7 @@ exports.scraping_get_all = function(req, res, next) {
   });
 }
 
-exports.scraping_get_one = function(req, res, next) {
+exports.GetById = function(req, res, next) {
   var id = req.param('id');
   var sql = `SELECT * FROM scraping_location WHERE id='${id}'`;
   
@@ -54,7 +54,7 @@ exports.scraping_get_one = function(req, res, next) {
   });
 }
 
-exports.scraping_insert_one = function(req, res, next) {
+exports.Insert = function(req, res, next) {
   var name = req.body.name;
   var latitude = req.body.latitude;
   var longitude = req.body.longitude;
@@ -80,7 +80,7 @@ exports.scraping_insert_one = function(req, res, next) {
   });
 }
 
-exports.scraping_delete_one = function(req, res, next) {
+exports.DeleteById = function(req, res, next) {
   var id = req.param('id');
   var sql = `DELETE FROM scraping_location WHERE id='${id}'`;
   

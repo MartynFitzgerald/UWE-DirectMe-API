@@ -24,14 +24,14 @@ router.get('/', function(req, res, next) {
 });
 
 
+/* GET car parks from the db. */
+router.get('/api/carpark/:id', carparkController.GetById);
+
 /* GET relevant car parks from the db. */
-router.get('/api/carpark/:latitude/:longitude/:radius', carparkController.carpark_get_relevant);
+router.get('/api/carpark', carparkController.GetForUserLocation);
 
 /* GET all car parks from the db. */
-router.get('/api/carpark/', carparkController.carpark_get_all);
-
-/* GET car parks from the db. */
-router.get('/api/carpark/:id', carparkController.carpark_get_one);
+//router.get('/api/carpark/', carparkController.carpark_get_all);
 
 /* INSERT car parks into the db. */
 //router.post('/api/carpark/', carparkController.carpark_get_one);

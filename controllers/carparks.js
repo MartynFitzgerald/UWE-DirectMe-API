@@ -13,10 +13,33 @@
 *===========================================================================*/
 var dbController = require('./dbconnection');
 
-exports.carpark_get_relevant  = function(req, res, next) {
-  var latitude = req.param('latitude');
-  var longitude = req.param('longitude');
-  var radius = req.param('radius');
+exports.GetById = function(req, res, next) {
+  var id = req.param('id');
+  var sql = `SELECT * FROM car_park WHERE id='${id}'`;
+  
+  dbController.connection.query(sql, function (error, results, fields) {
+    if (results.length > 0) {
+      res.status(200).json({
+        result: results
+      });
+    }
+    else if (results.length <= 0) 
+    {
+      res.status(204);
+    }
+    else if (error)
+    {
+      throw error;
+    }
+  });
+}
+
+exports.GetForUserLocation  = function(req, res, next) {
+//:latitude/:longitude/:radius
+
+  var latitude = req.query.latitude;
+  var longitude = req.query.longitude;
+  var radius = req.query.radius;
   /* 
       Find the car parks within the distance from the users Point
       https://stackoverflow.com/questions/29916341/geo-location-radius-search-using-php-and-mysql
@@ -46,27 +69,6 @@ exports.carpark_get_relevant  = function(req, res, next) {
 exports.carpark_get_all = function(req, res, next) {
   var sql = "SELECT * FROM car_park";
 
-  dbController.connection.query(sql, function (error, results, fields) {
-    if (results.length > 0) {
-      res.status(200).json({
-        result: results
-      });
-    }
-    else if (results.length <= 0) 
-    {
-      res.status(204);
-    }
-    else if (error)
-    {
-      throw error;
-    }
-  });
-}
-
-exports.carpark_get_one = function(req, res, next) {
-  var id = req.param('id');
-  var sql = `SELECT * FROM car_park WHERE id='${id}'`;
-  
   dbController.connection.query(sql, function (error, results, fields) {
     if (results.length > 0) {
       res.status(200).json({

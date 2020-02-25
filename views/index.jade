@@ -2,24 +2,23 @@ extends layout
 
 block content
   h1= title
-
   hr
   h3 GET relavent car park  locations
-    h5 See #[a(href="/api/carpark/51.4545/-2.5879/500") #{"http://127.0.0.1:3000/api/carpark/51.4545/-2.5879/500"}]
+    h5 See #[a(href="/api/carpark?latitude=51.4545&longitude=-2.5870&radius=250000") #{"/api/carpark?latitude=51.4545&longitude=-2.5870&radius=250000"}]
 
   h3 GET All car park  locations
-    h5 See #[a(href="/api/carpark/") #{"http://127.0.0.1:3000/api/carpark/"}]
+    h5 See #[a(href="/api/carpark/") #{"/api/carpark/"}]
 
   h3 GET One car park locations
-    h5 Id: 1 See #[a(href="/api/carpark/1") #{"http://127.0.0.1:3000/api/carpark/1"}]
+    h5 Id: 1 See #[a(href="/api/carpark/1") #{"/api/carpark/1"}]
 
   hr
 
   h3 GET All scraping locations
-    h5 See #[a(href="/api/scrapinglocation/") #{"http://127.0.0.1:3000/api/scrapinglocation/"}]
+    h5 See #[a(href="/api/scrapinglocation/") #{"/api/scrapinglocation/"}]
 
   h3 GET One scraping locations
-    h5 Id: 1 See #[a(href="/api/scrapinglocation/1") #{"http://127.0.0.1:3000/api/scrapinglocation/1"}]
+    h5 Id: 1 See #[a(href="/api/scrapinglocation/1") #{"/api/scrapinglocation/1"}]
 
   h3 INSERT New scraping locations
   form(name="add-estimation", method="POST", action='/api/scrapinglocation')

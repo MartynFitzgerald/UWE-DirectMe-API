@@ -29,6 +29,7 @@ exports.GetById = function(req, res, next) {
     }
     else if (error)
     {
+      console.error('Database connection failed: ' + error.stack);
       throw error;
     }
   });
@@ -52,6 +53,7 @@ exports.GetForUserLocation  = function(req, res, next) {
   dbController.connection.query(sql, function (error, results, fields) {
     if (error)
     {
+      console.error('Database connection failed: ' + error.stack);
       throw error;
     }
     if (results.length > 0) {
@@ -81,6 +83,7 @@ exports.carpark_get_all = function(req, res, next) {
     }
     else if (error)
     {
+      console.error('Database connection failed: ' + error.stack);
       throw error;
     }
   });

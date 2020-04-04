@@ -15,8 +15,9 @@ var express = require('express');
 var router = express.Router();
 
 /* Importing functions from other files */
-var carparkController = require('../controllers/carparks');
+var carparkController = require('../controllers/carpark');
 var scrapingLocationController = require('../controllers/scrapingLocation');
+var userController = require('../controllers/user');
 
 /* Creating a index page for the applicaiton */
 router.get('/', function(req, res, next) {
@@ -31,14 +32,7 @@ router.get('/api/carpark/:id', carparkController.GetById);
 router.get('/api/carpark', carparkController.GetForUserLocation);
 
 /* GET all car parks from the db. */
-//router.get('/api/carpark/', carparkController.carpark_get_all);
-
-/* INSERT car parks into the db. */
-//router.post('/api/carpark/', carparkController.carpark_get_one);
-
-/* DELETE car parks from the db. */
-//router.delete('/api/carpark/:id', carparkController.carpark_get_one);
-
+router.get('/api/carparks/', carparkController.carpark_get_all);
 
 /* GET All Scrapings Location from the db. */
 router.get('/api/scrapinglocation/', scrapingLocationController.GetAll);
@@ -51,5 +45,8 @@ router.post('/api/scrapinglocation/', scrapingLocationController.Insert);
 
 /* DELETE Scrapings Location from the db. */
 router.delete('/api/scrapinglocation/:id', scrapingLocationController.DeleteById);
+
+/* GET car parks from the db. */
+router.get('/api/user/:emailAddress', userController.GetByEmailAddress);
 
 module.exports = router;

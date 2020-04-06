@@ -14,10 +14,7 @@
 var dbController = require('./dbconnection');
 
 exports.GetById = function(req, res, next) {
-  var id = req.param('id');
-  var sql = `SELECT * FROM car_park WHERE id='${id}'`;
-  
-  dbController.connection.query(sql, function (error, results, fields) {
+  dbController.connection.query(`SELECT * FROM car_park WHERE car_park_id='${req.param('id')}'`, function (error, results, fields) {
     if (results.length > 0) {
       res.status(200).json({
         result: results
@@ -36,8 +33,6 @@ exports.GetById = function(req, res, next) {
 }
 
 exports.GetForUserLocation  = function(req, res, next) {
-//:latitude/:longitude/:radius
-
   var latitude = req.query.latitude;
   var longitude = req.query.longitude;
   var radius = req.query.radius;
@@ -69,9 +64,7 @@ exports.GetForUserLocation  = function(req, res, next) {
 }
 
 exports.carpark_get_all = function(req, res, next) {
-  var sql = "SELECT * FROM car_park";
-
-  dbController.connection.query(sql, function (error, results, fields) {
+  dbController.connection.query(`SELECT * FROM car_park`, function (error, results, fields) {
     if (results.length > 0) {
       res.status(200).json({
         result: results

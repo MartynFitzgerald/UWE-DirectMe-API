@@ -81,7 +81,7 @@ exports.DeleteById = function(req, res, next) {
       res.status(204);
     }
     else if (error)
-    {
+    { 
       throw error;
     }
   });

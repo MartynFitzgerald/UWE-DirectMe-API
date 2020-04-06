@@ -13,26 +13,9 @@
 *===========================================================================*/
 var dbController = require('./dbconnection');
 
-exports.GetById = function(req, res, next) {
-  dbController.connection.query(`SELECT * FROM car_park WHERE car_park_id='${req.param('id')}'`, function (error, results, fields) {
-    if (results.length > 0) {
-      res.status(200).json({
-        result: results
-      });
-    }
-    else if (results.length <= 0) 
-    {
-      res.status(204);
-    }
-    else if (error)
-    {
-      console.error('Database connection failed: ' + error.stack);
-      throw error;
-    }
-  });
-}
 
-exports.GetForUserLocation  = function(req, res, next) {
+
+exports.get_from_user_location  = function(req, res, next) {
   var latitude = req.query.latitude;
   var longitude = req.query.longitude;
   var radius = req.query.radius;
@@ -63,8 +46,27 @@ exports.GetForUserLocation  = function(req, res, next) {
   });
 }
 
-exports.carpark_get_all = function(req, res, next) {
+exports.get_all = function(req, res, next) {
   dbController.connection.query(`SELECT * FROM car_park`, function (error, results, fields) {
+    if (results.length > 0) {
+      res.status(200).json({
+        result: results
+      });
+    }
+    else if (results.length <= 0) 
+    {
+      res.status(204);
+    }
+    else if (error)
+    {
+      console.error('Database connection failed: ' + error.stack);
+      throw error;
+    }
+  });
+}
+
+exports.get_by_id = function(req, res, next) {
+  dbController.connection.query(`SELECT * FROM car_park WHERE car_park_id='${req.param('id')}'`, function (error, results, fields) {
     if (results.length > 0) {
       res.status(200).json({
         result: results
@@ -84,7 +86,7 @@ exports.carpark_get_all = function(req, res, next) {
 
 
 /*
-exports.scraping_insert_one = function(req, res, next) {
+exports.insert = function(req, res, next) {
   var name = req.body.name;
   var latitude = req.body.latitude;
   var longitude = req.body.longitude;
@@ -110,7 +112,7 @@ exports.scraping_insert_one = function(req, res, next) {
   });
 }
 
-exports.scraping_delete_one = function(req, res, next) {
+exports.delete_by_id = function(req, res, next) {
   var id = req.param('id');
   var sql = `DELETE FROM scrapinglocations WHERE id='${id}'`;
   

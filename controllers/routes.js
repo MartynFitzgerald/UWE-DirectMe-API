@@ -24,31 +24,40 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Parking Application' });
 });
 
+/* 
+  Car Parks
+*/
 /* GET relevant car parks from the db. */
-router.get('/API/GET/CARPARK', carparkController.GetForUserLocation);
+router.get('/API/GET/CARPARK', carparkController.get_from_user_location);
 
 /* GET all car parks from the db. */
-router.get('/API/GET/CARPARKS/', carparkController.carpark_get_all);
+router.get('/API/GET/CARPARKS/', carparkController.get_all);
 
 /* GET car parks from the db. */
-router.get('/API/GET/CARPARK/:id', carparkController.GetById);
+router.get('/API/GET/CARPARK/:id', carparkController.get_by_id);
 
-/* GET All Scrapings Location from the db. */
-router.get('/API/GET/SCRAPINGLOCATIONS/', scrapingLocationController.GetAll);
+/* 
+  Scraping Locations
+*/
+/* GET All Scraping Locations from the db. */
+router.get('/API/GET/SCRAPINGLOCATIONS/', scrapingLocationController.get_all);
 
 /* GET Scrapings Location from the db. */
-router.get('/API/GET/SCRAPINGLOCATIONS/:id', scrapingLocationController.GetById);
+router.get('/API/GET/SCRAPINGLOCATIONS/:id', scrapingLocationController.get_by_id);
 
 /* INSERT Scrapings Location into the db. */
-router.post('/API/INSERT/SCRAPINGLOCATIONS/', scrapingLocationController.Insert);
+router.post('/API/INSERT/SCRAPINGLOCATIONS/', scrapingLocationController.insert);
 
 /* DELETE Scrapings Location from the db. */
-router.delete('/API/DELETE/SCRAPINGLOCATIONS/:id', scrapingLocationController.DeleteById);
+router.delete('/API/DELETE/SCRAPINGLOCATIONS/:id', scrapingLocationController.delete_by_id);
+
+/* 
+  Users
+*/
+/* GET car parks from the db. */
+router.get('/API/GET/USERS/', userController.get_all);
 
 /* GET car parks from the db. */
-router.get('/API/GET/USERS/', userController.GetAll);
-
-/* GET car parks from the db. */
-router.get('/API/GET/USER/:emailAddress', userController.GetByEmailAddress);
+router.get('/API/GET/USER/:emailAddress', userController.get_by_email_address);
 
 module.exports = router;

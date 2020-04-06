@@ -13,7 +13,7 @@
 *===========================================================================*/
 var dbController = require('./dbconnection');
 
-exports.GetAll = function(req, res, next) {
+exports.get_all = function(req, res, next) {
   dbController.connection.query(`SELECT * FROM scraping_location`, function (error, results, fields) {
     console.log(results);
     if (results.length > 0) {
@@ -32,7 +32,7 @@ exports.GetAll = function(req, res, next) {
   });
 }
 
-exports.GetById = function(req, res, next) {
+exports.get_by_id = function(req, res, next) {
   dbController.connection.query(`SELECT * FROM scraping_location WHERE scraping_location_id='${req.param('id')}'`, function (error, results, fields) {
     if (results.length > 0) {
       res.status(200).json({
@@ -50,7 +50,7 @@ exports.GetById = function(req, res, next) {
   });
 }
 
-exports.Insert = function(req, res, next) {
+exports.insert = function(req, res, next) {
   dbController.connection.query(`INSERT IGNORE INTO scraping_location (name, latitude, longitude, radius) VALUES ('${req.body.name}', '${req.body.latitude}', '${req.body.longitude}', ${req.body.radius});`, function (error, results, fields) {
     console.log(results);
     if (results.affectedRows > 0) {
@@ -69,7 +69,7 @@ exports.Insert = function(req, res, next) {
   });
 }
 
-exports.DeleteById = function(req, res, next) {
+exports.delete_by_id = function(req, res, next) {
   dbController.connection.query(`DELETE FROM scraping_location WHERE id='${req.param('id')}'`, function (error, results, fields) {
     if (results.affectedRows> 0) {
       res.status(200).json({

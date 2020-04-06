@@ -13,7 +13,7 @@
 *===========================================================================*/
 var dbController = require('./dbconnection');
 
-exports.GetAll = function(req, res, next) {
+exports.get_all = function(req, res, next) {
   dbController.connection.query(`SELECT * FROM user`, function (error, results, fields) {
     console.log(results);
     if (results.length > 0) {
@@ -32,7 +32,7 @@ exports.GetAll = function(req, res, next) {
   });
 }
 
-exports.GetByEmailAddress = function(req, res, next) {
+exports.get_by_email_address = function(req, res, next) {
   var emailAddress = req.param('emailAddress');
   var sql = `SELECT * FROM user WHERE email_address='${emailAddress}'`;
   

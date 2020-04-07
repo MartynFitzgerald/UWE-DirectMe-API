@@ -29,8 +29,7 @@ exports.get_from_user_location  = function(req, res, next) {
     FROM car_park HAVING distance < '${radius}' ORDER BY distance`;
 
   dbController.connection.query(sql, function (error, results, fields) {
-    if (error)
-    {
+    if (error) {
       console.error('Database connection failed: ' + error.stack);
       throw error;
     }
@@ -39,8 +38,7 @@ exports.get_from_user_location  = function(req, res, next) {
         result: results
       });
     }
-    else if (results.length <= 0) 
-    {
+    else if (results.length <= 0) {
       res.status(204);
     }
   });
@@ -53,12 +51,10 @@ exports.get_all = function(req, res, next) {
         result: results
       });
     }
-    else if (results.length <= 0) 
-    {
+    else if (results.length <= 0) {
       res.status(204);
     }
-    else if (error)
-    {
+    else if (error) {
       console.error('Database connection failed: ' + error.stack);
       throw error;
     }
@@ -72,12 +68,10 @@ exports.get_by_id = function(req, res, next) {
         result: results
       });
     }
-    else if (results.length <= 0) 
-    {
+    else if (results.length <= 0) {
       res.status(204);
     }
-    else if (error)
-    {
+    else if (error) {
       console.error('Database connection failed: ' + error.stack);
       throw error;
     }
@@ -101,12 +95,10 @@ exports.insert = function(req, res, next) {
         result: results
       });
     }
-    else if (results.affectedRows <= 0) 
-    {
+    else if (results.affectedRows <= 0) {
       res.status(204);
     }
-    else if (error)
-    {
+    else if (error) {
       throw error;
     }
   });
@@ -122,12 +114,10 @@ exports.delete_by_id = function(req, res, next) {
         result: results
       });
     }
-    else if (results.affectedRows <= 0) 
-    {
+    else if (results.affectedRows <= 0) {
       res.status(204);
     }
-    else if (error)
-    {
+    else if (error) {
       throw error;
     }
   });

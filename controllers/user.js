@@ -21,12 +21,10 @@ exports.get_all = function(req, res, next) {
         result: results
       });
     }
-    else if (results.length <= 0) 
-    {
+    else if (results.length <= 0) {
       res.status(204);
     }
-    else if (error)
-    {
+    else if (error) {
       throw error;
     }
   });
@@ -42,12 +40,10 @@ exports.get_by_email_address = function(req, res, next) {
         result: results
       });
     }
-    else if (results.length <= 0) 
-    {
+    else if (results.length <= 0) {
       res.status(204);
     }
-    else if (error)
-    {
+    else if (error) {
       console.error('Database connection failed: ' + error.stack);
       throw error;
     }

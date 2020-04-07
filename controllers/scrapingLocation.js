@@ -21,12 +21,10 @@ exports.get_all = function(req, res, next) {
         result: results
       });
     }
-    else if (results.length <= 0) 
-    {
+    else if (results.length <= 0) {
       res.status(204);
     }
-    else if (error)
-    {
+    else if (error) {
       throw error;
     }
   });
@@ -39,12 +37,10 @@ exports.get_by_id = function(req, res, next) {
         result: results
       });
     }
-    else if (results.length <= 0) 
-    {
+    else if (results.length <= 0) {
       res.status(204);
     }
-    else if (error)
-    {
+    else if (error) {
       throw error;
     }
   });
@@ -58,12 +54,10 @@ exports.insert = function(req, res, next) {
         result: results
       });
     }
-    else if (results.affectedRows <= 0) 
-    {
+    else if (results.affectedRows <= 0) {
       res.status(204);
     }
-    else if (error)
-    {
+    else if (error) {
       throw error;
     }
   });
@@ -76,12 +70,10 @@ exports.delete_by_id = function(req, res, next) {
         result: results
       });
     }
-    else if (results.affectedRows <= 0) 
-    {
+    else if (results.affectedRows <= 0) {
       res.status(204);
     }
-    else if (error)
-    { 
+    else if (error){ 
       throw error;
     }
   });

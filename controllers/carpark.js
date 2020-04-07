@@ -12,114 +12,31 @@
 |                their area they are searching for.
 *===========================================================================*/
 var dbController = require('./dbconnection');
-
-
+var functions = require('./functions');
 
 exports.get_from_user_location  = function(req, res, next) {
-  var latitude = req.query.latitude;
-  var longitude = req.query.longitude;
-  var radius = req.query.radius;
   /* 
       Find the car parks within the distance from the users Point
       https://stackoverflow.com/questions/29916341/geo-location-radius-search-using-php-and-mysql
   */
-  var sql = `SELECT *, (SQRT(
-    POW(69.1 * (latitude - '${latitude}'), 2) +
-    POW(69.1 * ('${longitude}' - longitude) * COS(latitude / 57.3), 2)) * 1609.344) AS distance
-    FROM car_park HAVING distance < '${radius}' ORDER BY distance`;
+  var sql = `SELECT *, (SQRT(POW(69.1 * (latitude - '${req.query.latitude}'), 2) + POW(69.1 * ('${req.query.longitude}' - longitude) * COS(latitude / 57.3), 2)) * 1609.344) AS distance
+    FROM car_park HAVING distance < '${req.query.radius}' ORDER BY distance`;
 
-  dbController.connection.query(sql, function (error, results, fields) {
-    if (error) {
-      console.error('Database connection failed: ' + error.stack);
-      throw error;
-    }
-    if (results.length > 0) {
-      res.status(200).json({
-        result: results
-      });
-    }
-    else if (results.length <= 0) {
-      res.status(204);
-    }
-  });
+  functions.fetch(sql, req, res, next);
 }
 
 exports.get_all = function(req, res, next) {
-  dbController.connection.query(`SELECT * FROM car_park`, function (error, results, fields) {
-    if (results.length > 0) {
-      res.status(200).json({
-        result: results
-      });
-    }
-    else if (results.length <= 0) {
-      res.status(204);
-    }
-    else if (error) {
-      console.error('Database connection failed: ' + error.stack);
-      throw error;
-    }
-  });
+  functions.fetch(`SELECT * FROM car_park`, req, res, next);
 }
 
 exports.get_by_id = function(req, res, next) {
-  dbController.connection.query(`SELECT * FROM car_park WHERE car_park_id='${req.param('id')}'`, function (error, results, fields) {
-    if (results.length > 0) {
-      res.status(200).json({
-        result: results
-      });
-    }
-    else if (results.length <= 0) {
-      res.status(204);
-    }
-    else if (error) {
-      console.error('Database connection failed: ' + error.stack);
-      throw error;
-    }
-  });
+  functions.fetch(`SELECT * FROM car_park WHERE car_park_id='${req.param('id')}'`, req, res, next);
 }
 
-
-/*
 exports.insert = function(req, res, next) {
-  var name = req.body.name;
-  var latitude = req.body.latitude;
-  var longitude = req.body.longitude;
-  var radius = req.body.radius;
-
-  var sql = `INSERT IGNORE INTO scrapinglocations (name, latitude, longitude, radius) VALUES ('${name}', '${latitude}', '${longitude}', ${radius});`;
-
-  dbController.connection.query(sql, function (error, results, fields) {
-    console.log(results);
-    if (results.affectedRows > 0) {
-      res.status(200).json({
-        result: results
-      });
-    }
-    else if (results.affectedRows <= 0) {
-      res.status(204);
-    }
-    else if (error) {
-      throw error;
-    }
-  });
+  functions.insert(`INSERT IGNORE INTO car_park (name, address, latitude, longitude, last_updated_at, scraping_location_id, external_provider_id) VALUES ('${ req.body.name}',  '${req.body.address}', '${req.body.latitude}', '${req.body.longitude}', '${req.body.last_updated_at}', '${req.body.scraping_location_id}', '${req.body.external_provider_id}');`, req, res, next);
 }
 
 exports.delete_by_id = function(req, res, next) {
-  var id = req.param('id');
-  var sql = `DELETE FROM scrapinglocations WHERE id='${id}'`;
-  
-  dbController.connection.query(sql, function (error, results, fields) {
-    if (results.affectedRows> 0) {
-      res.status(200).json({
-        result: results
-      });
-    }
-    else if (results.affectedRows <= 0) {
-      res.status(204);
-    }
-    else if (error) {
-      throw error;
-    }
-  });
+  functions.delete(`DELETE FROM car_park WHERE car_park_id='${req.param('id')}'`, req, res, next);
 }
-*/

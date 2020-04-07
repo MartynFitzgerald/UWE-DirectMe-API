@@ -12,69 +12,20 @@
 |                includes GET ALL, GET ONE, INSERT ONE and DELETE ONE
 *===========================================================================*/
 var dbController = require('./dbconnection');
+var functions = require('./functions');
 
 exports.get_all = function(req, res, next) {
-  dbController.connection.query(`SELECT * FROM scraping_location`, function (error, results, fields) {
-    console.log(results);
-    if (results.length > 0) {
-      res.status(200).json({
-        result: results
-      });
-    }
-    else if (results.length <= 0) {
-      res.status(204);
-    }
-    else if (error) {
-      throw error;
-    }
-  });
+  functions.fetch(`SELECT * FROM scraping_location`, req, res, next);
 }
 
 exports.get_by_id = function(req, res, next) {
-  dbController.connection.query(`SELECT * FROM scraping_location WHERE scraping_location_id='${req.param('id')}'`, function (error, results, fields) {
-    if (results.length > 0) {
-      res.status(200).json({
-        result: results
-      });
-    }
-    else if (results.length <= 0) {
-      res.status(204);
-    }
-    else if (error) {
-      throw error;
-    }
-  });
+  functions.fetch(`SELECT * FROM scraping_location WHERE scraping_location_id='${req.param('id')}'`, req, res, next);
 }
 
 exports.insert = function(req, res, next) {
-  dbController.connection.query(`INSERT IGNORE INTO scraping_location (name, latitude, longitude, radius) VALUES ('${req.body.name}', '${req.body.latitude}', '${req.body.longitude}', ${req.body.radius});`, function (error, results, fields) {
-    console.log(results);
-    if (results.affectedRows > 0) {
-      res.status(200).json({
-        result: results
-      });
-    }
-    else if (results.affectedRows <= 0) {
-      res.status(204);
-    }
-    else if (error) {
-      throw error;
-    }
-  });
+  functions.insert(`INSERT IGNORE INTO scraping_location (name, latitude, longitude, radius) VALUES ('${req.body.name}', '${req.body.latitude}', '${req.body.longitude}', '${req.body.radius}');`, req, res, next);
 }
 
 exports.delete_by_id = function(req, res, next) {
-  dbController.connection.query(`DELETE FROM scraping_location WHERE id='${req.param('id')}'`, function (error, results, fields) {
-    if (results.affectedRows> 0) {
-      res.status(200).json({
-        result: results
-      });
-    }
-    else if (results.affectedRows <= 0) {
-      res.status(204);
-    }
-    else if (error){ 
-      throw error;
-    }
-  });
+  functions.delete(`DELETE FROM scraping_location WHERE scraping_location_id='${req.param('id')}'`, req, res, next);
 }

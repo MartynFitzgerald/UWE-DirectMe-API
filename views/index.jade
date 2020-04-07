@@ -18,10 +18,10 @@ block content
     h5 See #[a(href="/API/GET/SCRAPINGLOCATIONS/") #{"/API/GET/SCRAPINGLOCATIONS/"}]
 
   h3 GET One scraping locations
-    h5 Id: 1 See #[a(href="/API/GET/SCRAPINGLOCATIONS/1") #{"/API/GET/SCRAPINGLOCATIONS/1"}]
+    h5 Id: 1 See #[a(href="/API/GET/SCRAPINGLOCATIONS/1") #{"/API/GET/SCRAPINGLOCATION/1"}]
 
   h3 INSERT New scraping locations
-  form(name="add-estimation", method="POST", action='/API/INSERT/SCRAPINGLOCATIONS')
+  form(name="add-estimation", method="POST", action='/API/INSERT/SCRAPINGLOCATION/')
     div.input
       span.label Name: 
       input(type="text", name="name", placeholder="Bristol")

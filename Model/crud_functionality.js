@@ -74,7 +74,7 @@ exports.user_get_by_email_address = function(req, res, next) {
 }
 
 exports.user_insert = function(req, res, next) {
-  insert(`INSERT IGNORE INTO user (fName, lName, email_address, password, phone_number, darkmode, radius) VALUES ('${req.body.fName}', '${req.body.lName}', '${req.body.email_address}', '${req.body.password}', '${req.body.phone_number}', '${req.body.darkmode}', '${req.body.radius}');`, req, res, next);
+  insert(`INSERT IGNORE INTO user (fName, lName, email_address, password, phone_number, darkmode, radius) VALUES ('${req.body.fName}', '${req.body.lName}', '${req.body.email_address}', '${req.body.password}', '${req.body.phone_number}', '0', '1500');`, req, res, next);
 }
 
 exports.user_delete_by_email_address = function(req, res, next) {

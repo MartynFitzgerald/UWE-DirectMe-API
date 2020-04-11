@@ -72,3 +72,6 @@ npm install
 ![AWS 11](./installation_screenshots/aws11.png)
 18. Using MySQL Workbench connect to the database just created.
 ![AWS 11](./installation_screenshots/db12.png)
+19. Create a new schema called 'DirectMe'.
+20. Execute the DirectMe.sql into the schema created.
+21. Go to the dashboard of the 'Elastic Beanstalk', it should display the health as ####### also at the top of the screen the endpoint should be visible (directmeapi-env.eba-syyipmj2.us-east-1.elasticbeanstalk.com).

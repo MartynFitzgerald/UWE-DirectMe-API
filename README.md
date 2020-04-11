@@ -28,7 +28,8 @@ This is a diagram that shows how the system shall be used.
 
 1. Install Git (https://gitforwindows.org/).
 2. Install Node.js 12+ LTS (https://nodejs.org/en/download/).
-3. Create a AWS account, if one does't already exist.
+3. Install MySQL Workbench 8.0 CE (https://dev.mysql.com/downloads/workbench/).
+4. Create a AWS account, if one does't already exist.
 
 ## Installation
 
@@ -50,10 +51,24 @@ npm install
 7. Open the 'Services' Menu and then select the service 'Elastic Beanstalk' under the sub menu of 'Compute'.
 ![AWS 1](./installation_screenshots/aws1.png)
 8. Select option 'Create a new environment'.
-![AWS 1](./installation_screenshots/aws2.png)
+![AWS 2](./installation_screenshots/aws2.png)
 9. Afterwards it will ask what type of tier the enviroment will be, select 'Web server environment'.
-![AWS 1](./installation_screenshots/aws3.png)
-10. Fill in the name of the application and under the section 'Application code', select 'Upload your code' and choose the zip file created previously. Then Create the environment. 
-![AWS 1](./installation_screenshots/aws4.png)
-![AWS 1](./installation_screenshots/aws5.png)
-11. In the enviroment 
+![AWS 3](./installation_screenshots/aws3.png)
+10. Fill in the name of the application and under the section 'Application code'.
+![AWS 4](./installation_screenshots/aws4.png)
+11. Select platform as 'Node.js'.
+![AWS 5](./installation_screenshots/aws5.png)
+12. Select 'Upload your code' and choose the zip file created previously. Then Create the environment which may take a few minutes. 
+![AWS 6](./installation_screenshots/aws6.png)
+13. In the new enviroment select 'Configuration'.
+![AWS 7](./installation_screenshots/aws7.png)
+14. Edit the 'Software'.
+![AWS 8](./installation_screenshots/aws8.png)
+15. Insert 'npm start', then apply the settings.
+![AWS 9](./installation_screenshots/aws9.png)
+16. Go back to the 'Configuration' and edit the 'Database'.
+![AWS 10](./installation_screenshots/aws10.png)
+17. Create a database, with all the details shown below however, create a unique password.
+![AWS 11](./installation_screenshots/aws11.png)
+18. Using MySQL Workbench connect to the database just created.
+![AWS 11](./installation_screenshots/db12.png)

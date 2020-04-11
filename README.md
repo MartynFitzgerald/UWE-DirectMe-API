@@ -12,7 +12,7 @@ This component...
 This is a diagram that shows how the system shall be used.
 
 <div align="center">
-![Finite State Diagram PNG](DirectMe - API.png)
+![Finite State Diagram](DirectMe_API.png)
 </div>
 
 <hr>

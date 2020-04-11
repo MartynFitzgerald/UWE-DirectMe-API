@@ -50,7 +50,10 @@ npm install
 7. Open the 'Services' Menu and then select the service 'Elastic Beanstalk' under the sub menu of 'Compute'.
 ![AWS 1](./installation_screenshots/aws1.png)
 8. Select option 'Create a new environment'.
+![AWS 1](./installation_screenshots/aws2.png)
 9. Afterwards it will ask what type of tier the enviroment will be, select 'Web server environment'.
-10. Fill in the name of the application and under the section 'Application code', select 'Upload your code' and choose the zip file created previously. 
-11. Create the environment. 
-12. In the enviroment 
+![AWS 1](./installation_screenshots/aws3.png)
+10. Fill in the name of the application and under the section 'Application code', select 'Upload your code' and choose the zip file created previously. Then Create the environment. 
+![AWS 1](./installation_screenshots/aws4.png)
+![AWS 1](./installation_screenshots/aws5.png)
+11. In the enviroment 

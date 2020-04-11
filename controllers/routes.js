@@ -15,7 +15,7 @@ var express = require('express');
 var router = express.Router();
 
 /* Importing functions from other files */
-var controller = require('../Model/crud_functionality');
+var controller = require('../model/crud_functionality');
 
 /* Creating a index page for the applicaiton */
 router.get('/', function(req, res, next) {

@@ -31,14 +31,15 @@ CREATE TABLE `external_provider` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `car_park` (
-  `car_park_id` int(11) PRIMARY KEY AUTO_INCREMENT,
+  `car_park_id` int(11) AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `latitude` float NOT NULL,
   `longitude` float NOT NULL,
   `last_updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `scraping_location_id` int(11),
-  `external_provider_id` varchar(255),
+  `external_provider_id` varchar(255) UNIQUE,
+  PRIMARY KEY (`car_park_id`, `latitude`, `longitude`),
   FOREIGN KEY (`scraping_location_id`) REFERENCES scraping_location(`scraping_location_id`),
   FOREIGN KEY (`external_provider_id`) REFERENCES external_provider(`external_provider_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

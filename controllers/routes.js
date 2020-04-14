@@ -15,7 +15,11 @@ var express = require('express');
 var router = express.Router();
 
 /* Importing functions from other files */
-var controller = require('../model/crud_functionality');
+var scraping_location = require('../model/scrapingLocation');
+var car_park = require('../model/carPark');
+var user = require('../model/user');
+var review = require('../model/review');
+var history = require('../model/history');
 
 /* Creating a index page for the applicaiton */
 router.get('/', function(req, res, next) {
@@ -23,52 +27,84 @@ router.get('/', function(req, res, next) {
 });
 
 /* 
-  Scraping Locations
+  Scraping Location
 */
 /* GET All Scraping Locations from the db. */
-router.get('/API/GET/SCRAPINGLOCATIONS/', controller.scraping_location_get_all);
+router.get('/API/GET/SCRAPINGLOCATIONS/', scraping_location.get_all);
 
 /* GET Scrapings Location from the db. */
-router.get('/API/GET/SCRAPINGLOCATION/:id', controller.scraping_location_get_by_id);
+router.get('/API/GET/SCRAPINGLOCATION/:id', scraping_location.get_by_id);
 
 /* INSERT Scrapings Location into the db. */
-router.post('/API/INSERT/SCRAPINGLOCATION/', controller.scraping_location_insert);
+router.post('/API/INSERT/SCRAPINGLOCATION/', scraping_location.insert);
 
 /* DELETE Scrapings Location from the db. */
-router.delete('/API/DEL/SCRAPINGLOCATION/:id', controller.scraping_location_delete_by_id);
+router.delete('/API/DEL/SCRAPINGLOCATION/:id', scraping_location.delete_by_id);
 
 /* 
-  Car Parks
+  Car Park
 */
 /* GET relevant car parks from the db. */
-router.get('/API/GET/CARPARK', controller.car_park_get_from_user_location);
+router.get('/API/GET/CARPARK', car_park.get_from_user_location);
 
 /* GET all car parks from the db. */
-router.get('/API/GET/CARPARKS/', controller.car_park_get_all);
+router.get('/API/GET/CARPARKS/', car_park.get_all);
 
 /* GET car parks from the db. */
-router.get('/API/GET/CARPARK/:id', controller.car_park_get_by_id);
+router.get('/API/GET/CARPARK/:id', car_park.get_by_id);
 
 /* INSERT car parks into the db. */
-router.post('/API/INSERT/CARPARK/', controller.car_park_insert);
+router.post('/API/INSERT/CARPARK/', car_park.insert);
 
 /* DELETE car parks from the db. */
-router.delete('/API/DEL/CARPARK/:id', controller.car_park_delete_by_id);
-
+router.delete('/API/DEL/CARPARK/:id', car_park.delete_by_id);
 
 /* 
-  Users
+  User
 */
 /* GET car parks from the db. */
-router.get('/API/GET/USERS/', controller.user_get_all);
+router.get('/API/GET/USERS/', user.get_all);
 
 /* GET car parks from the db. */
-router.get('/API/GET/USER/:emailAddress', controller.user_get_by_email_address);
+router.get('/API/GET/USER/:emailAddress', user.get_by_email_address);
 
 /* INSERT car parks into the db. */
-router.post('/API/INSERT/USER/', controller.user_insert);
+router.post('/API/INSERT/USER/', user.insert);
 
 /* DELETE car parks from the db. */
-router.delete('/API/DEL/USER/:emailAddress', controller.user_delete_by_email_address);
+router.delete('/API/DEL/USER/:id', user.delete_by_id);
+
+/* 
+  Reviews
+*/
+/* GET car parks from the db. */
+router.get('/API/GET/REVIEW/', review.get_all);
+
+/* GET car parks from the db. */
+router.get('/API/GET/REVIEW/:id', review.get_by_user_id);
+
+/* GET car parks from the db. */
+router.get('/API/GET/REVIEW/:id', review.get_by_car_park_id);
+
+/* INSERT car parks into the db. */
+router.post('/API/INSERT/REVIEW/', review.insert);
+
+/* DELETE car parks from the db. */
+router.delete('/API/DEL/REVIEW/:id', review.delete_by_id);
+
+/* 
+  History
+*/
+/* GET car parks from the db. */
+router.get('/API/GET/HISTORY/', history.get_all);
+
+/* GET car parks from the db. */
+router.get('/API/GET/HISTORY/:id', history.get_by_id);
+
+/* INSERT car parks into the db. */
+router.post('/API/INSERT/HISTORY/', history.insert);
+
+/* DELETE car parks from the db. */
+router.delete('/API/DEL/HISTORY/:id', history.delete_by_id);
 
 module.exports = router;

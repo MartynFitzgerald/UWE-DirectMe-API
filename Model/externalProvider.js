@@ -25,7 +25,7 @@ exports.get_by_id = function(req, res, next) {
 }
 
 exports.get_by_car_park_id = function(req, res, next) {
-  crud.read(`SELECT * FROM external_provider WHERE car_park_id='${req.param('id')}';`, req, res, next);
+  crud.read(`SELECT * FROM external_provider WHERE car_park_id='${req.param('car_park_id')}';`, req, res, next);
 }
 
 exports.insert = function(req, res, next) {

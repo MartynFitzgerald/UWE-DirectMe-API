@@ -20,8 +20,12 @@ exports.get_all = function(req, res, next) {
   crud.read(`SELECT * FROM history`, req, res, next);
 }
 
-exports.get_by_id = function(req, res, next) {
-  crud.read(`SELECT * FROM history WHERE history_id='${req.param('id')}'`, req, res, next);
+exports.get_by_user_id = function(req, res, next) {
+  crud.read(`SELECT * FROM history WHERE user_id='${req.param('user_id')}';`, req, res, next);
+}
+
+exports.get_by_car_park_id = function(req, res, next) {
+  crud.read(`SELECT * FROM history WHERE car_park_id='${req.param('car_park_id')}';`, req, res, next);
 }
 
 exports.insert = function(req, res, next) {

@@ -21,11 +21,11 @@ exports.get_all = function(req, res, next) {
 }
 
 exports.get_by_user_id = function(req, res, next) {
-  crud.read(`SELECT * FROM review WHERE user_id='${req.param('id')}';`, req, res, next);
+  crud.read(`SELECT * FROM review WHERE user_id='${req.param('user_id')}';`, req, res, next);
 }
 
 exports.get_by_car_park_id = function(req, res, next) {
-  crud.read(`SELECT * FROM review WHERE car_park_id='${req.param('id')}';`, req, res, next);
+  crud.read(`SELECT * FROM review WHERE car_park_id='${req.param('car_park_id')}';`, req, res, next);
 }
 
 exports.insert = function(req, res, next) {

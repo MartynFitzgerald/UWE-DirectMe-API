@@ -19,6 +19,7 @@ var scraping_location = require('../model/scrapingLocation');
 var car_park = require('../model/carPark');
 var user = require('../model/user');
 var review = require('../model/review');
+var externalProvider = require('../model/externalProvider');
 var history = require('../model/history');
 
 /* Creating a index page for the applicaiton */
@@ -81,10 +82,10 @@ router.delete('/API/DEL/USER/:id', user.delete_by_id);
 router.get('/API/GET/REVIEW/', review.get_all);
 
 /* GET car parks from the db. */
-router.get('/API/GET/REVIEW/:id', review.get_by_user_id);
+router.get('/API/GET/REVIEW/:user_id', review.get_by_user_id);
 
 /* GET car parks from the db. */
-router.get('/API/GET/REVIEW/:id', review.get_by_car_park_id);
+router.get('/API/GET/REVIEW/:car_park_id', review.get_by_car_park_id);
 
 /* INSERT car parks into the db. */
 router.post('/API/INSERT/REVIEW/', review.insert);
@@ -93,13 +94,34 @@ router.post('/API/INSERT/REVIEW/', review.insert);
 router.delete('/API/DEL/REVIEW/:id', review.delete_by_id);
 
 /* 
+  External Provider
+*/
+/* GET car parks from the db. */
+router.get('/API/GET/EXTERNALPROVIDER/', externalProvider.get_all);
+
+/* GET car parks from the db. */
+router.get('/API/GET/EXTERNALPROVIDER/:id', externalProvider.get_by_id);
+
+/* GET car parks from the db. */
+router.get('/API/GET/EXTERNALPROVIDER/:car_park_id', externalProvider.get_by_car_park_id);
+
+/* INSERT car parks into the db. */
+router.post('/API/INSERT/EXTERNALPROVIDER/', externalProvider.insert);
+
+/* DELETE car parks from the db. */
+router.delete('/API/DEL/EXTERNALPROVIDER/:id', externalProvider.delete_by_id);
+
+/* 
   History
 */
 /* GET car parks from the db. */
 router.get('/API/GET/HISTORY/', history.get_all);
 
 /* GET car parks from the db. */
-router.get('/API/GET/HISTORY/:id', history.get_by_id);
+router.get('/API/GET/HISTORY/:user_id', history.get_by_user_id);
+
+/* GET car parks from the db. */
+router.get('/API/GET/HISTORY/:car_park_id', history.get_by_car_park_id);
 
 /* INSERT car parks into the db. */
 router.post('/API/INSERT/HISTORY/', history.insert);

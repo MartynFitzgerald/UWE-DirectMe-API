@@ -65,6 +65,37 @@ block content
 
   hr
 
+  h3 GET All External Provider
+    h5 See #[a(href="/API/GET/EXTERNALPROVIDER/") #{"/API/GET/EXTERNALPROVIDER/"}]
+
+  h3 GET One External Provider
+    h5 Id: 1 See #[a(href="/API/GET/EXTERNALPROVIDER/1") #{"/API/GET/EXTERNALPROVIDER/1"}]
+
+  h3 INSERT New External Provider
+  form(name="add-estimation", method="POST", action='/API/INSERT/EXTERNALPROVIDER/')
+    div.input
+      span.label Name: 
+      input(type="text", name="name", placeholder="Bristol")
+      span.label &nbsp
+      span.label Place ID: 
+      input(type="text", name="place_id", placeholder="51.4545")
+      span.label &nbsp
+      span.label Reference: 
+      input(type="text", name="reference", placeholder="-2.5879")
+      span.label &nbsp
+      span.label Rating: 
+      input(type="text", name="rating", placeholder="5000")
+      span.label &nbsp
+      span.label User Rating Total: 
+      input(type="text", name="user_rating_total", placeholder="-2.5879")
+      span.label &nbsp
+      span.label Car Park ID: 
+      input(type="text", name="car_park_id", placeholder="5000")
+      span.label &nbsp
+      input(type="submit", value="Insert")
+
+  hr
+
   h3 GET All Users
     h5 See #[a(href="/API/GET/USERS/") #{"/API/GET/USERS/"}]
 
@@ -96,3 +127,48 @@ block content
       input(type="text", name="radius", placeholder="1500")
       span.label &nbsp
       input(type="submit", value="Insert")
+
+  hr
+
+  h3 GET All Reviews
+    h5 See #[a(href="/API/GET/REVIEW/") #{"/API/GET/REVIEW/"}]
+
+  h3 GET One Reviews
+    h5 Id: 1 See #[a(href="/API/GET/REVIEW/1") #{"/API/GET/REVIEW/1"}]
+
+  h3 INSERT New Reviews
+  form(name="add-estimation", method="POST", action='/API/INSERT/REVIEW/')
+    div.input
+      span.label Description: 
+      input(type="text", name="description", placeholder="The Car Park Was Good")
+      span.label &nbsp
+      span.label Rating: 
+      input(type="text", name="rating", placeholder="3")
+      span.label &nbsp
+      span.label Car Park Id:
+      input(type="text", name="car_park_id", placeholder="1")
+      span.label &nbsp
+      span.label User Id: 
+      input(type="text", name="user_id", placeholder="1")
+      span.label &nbsp
+      input(type="submit", value="Insert")
+
+  hr
+
+  h3 GET All History
+    h5 See #[a(href="/API/GET/HISTORY/") #{"/API/GET/HISTORY/"}]
+
+  h3 GET One History
+    h5 Id: 1 See #[a(href="/API/GET/HISTORY/1") #{"/API/GET/HISTORY/1"}]
+
+  h3 INSERT New History
+  form(name="add-estimation", method="POST", action='/API/INSERT/HISTORY/')
+    div.input
+      span.label Car Park Id:
+      input(type="text", name="car_park_id", placeholder="1")
+      span.label &nbsp
+      span.label User Id: 
+      input(type="text", name="user_id", placeholder="1")
+      span.label &nbsp
+      input(type="submit", value="Insert")
+

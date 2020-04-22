@@ -47,6 +47,24 @@ exports.create = function(sql, req, res, next) {
   });
 }
 
+exports.update = function(sql, req, res, next) {
+  dbController.connection.query(sql, function (error, results, fields) {
+    if (error) {
+      throw error;
+    }
+    else if (results) {
+      res.status(200).json({
+        result: results
+      });
+    }
+    else if (!results) {
+      res.status(200).json({
+        result: "404 - Error Encountered"
+      });
+    }
+  });
+}
+
 exports.del = function(sql, req, res, next) {
   dbController.connection.query(sql, function (error, results, fields) {
     if (results.affectedRows> 0) {

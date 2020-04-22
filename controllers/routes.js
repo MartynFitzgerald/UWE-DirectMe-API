@@ -57,76 +57,85 @@ router.get('/API/GET/CARPARK/:id', car_park.get_by_id);
 /* INSERT car parks into the db. */
 router.post('/API/INSERT/CARPARK/', car_park.insert);
 
+/* UPDATE car parks in the db. */
+router.put('/API/UPDATE/CARPARK/', car_park.update_by_id);
+
 /* DELETE car parks from the db. */
 router.delete('/API/DEL/CARPARK/:id', car_park.delete_by_id);
 
 /* 
   User
 */
-/* GET car parks from the db. */
+/* GET users from the db. */
 router.get('/API/GET/USERS/', user.get_all);
 
-/* GET car parks from the db. */
+/* GET user from the db. */
 router.get('/API/GET/USER/:emailAddress', user.get_by_email_address);
 
-/* INSERT car parks into the db. */
+/* INSERT user into the db. */
 router.post('/API/INSERT/USER/', user.insert);
 
-/* DELETE car parks from the db. */
+/* UPDATE user in the db. */
+router.put('/API/UPDATE/USER/', user.update_by_id);
+
+/* DELETE user from the db. */
 router.delete('/API/DEL/USER/:id', user.delete_by_id);
 
 /* 
   Reviews
 */
-/* GET car parks from the db. */
+/* GET reviews from the db. */
 router.get('/API/GET/REVIEW/', review.get_all);
 
-/* GET car parks from the db. */
+/* GET review from the db. */
 router.get('/API/GET/REVIEW/:user_id', review.get_by_user_id);
 
-/* GET car parks from the db. */
+/* GET review from the db. */
 router.get('/API/GET/REVIEW/:car_park_id', review.get_by_car_park_id);
 
-/* INSERT car parks into the db. */
+/* INSERT review into the db. */
 router.post('/API/INSERT/REVIEW/', review.insert);
 
-/* DELETE car parks from the db. */
+/* UPDATE review in the db. */
+router.put('/API/UPDATE/REVIEW/', review.update_by_id);
+
+/* DELETE review from the db. */
 router.delete('/API/DEL/REVIEW/:id', review.delete_by_id);
 
 /* 
   External Provider
 */
-/* GET car parks from the db. */
-router.get('/API/GET/EXTERNALPROVIDER/', externalProvider.get_all);
+/* GET external providers from the db. */
+router.get('/API/GET/EXTERNALPROVIDERS/', externalProvider.get_all);
 
-/* GET car parks from the db. */
+/* GET external provider from the db. */
 router.get('/API/GET/EXTERNALPROVIDER/:id', externalProvider.get_by_id);
 
-/* GET car parks from the db. */
+/* GET external provider from the db. */
 router.get('/API/GET/EXTERNALPROVIDER/:car_park_id', externalProvider.get_by_car_park_id);
 
-/* INSERT car parks into the db. */
+/* INSERT external provider into the db. */
 router.post('/API/INSERT/EXTERNALPROVIDER/', externalProvider.insert);
 
-/* DELETE car parks from the db. */
+/* UPDATE external provider in the db. */
+router.put('/API/UPDATE/EXTERNALPROVIDER/', externalProvider.update_by_id);
+
+/* DELETE external provider from the db. */
 router.delete('/API/DEL/EXTERNALPROVIDER/:id', externalProvider.delete_by_id);
 
 /* 
   History
 */
-/* GET car parks from the db. */
+/* GET historys from the db. */
 router.get('/API/GET/HISTORY/', history.get_all);
 
-/* GET car parks from the db. */
+/* GET history from the db. */
 router.get('/API/GET/HISTORY/:user_id', history.get_by_user_id);
 
-/* GET car parks from the db. */
-router.get('/API/GET/HISTORY/:car_park_id', history.get_by_car_park_id);
-
-/* INSERT car parks into the db. */
+/* INSERT history into the db. */
 router.post('/API/INSERT/HISTORY/', history.insert);
 
-/* DELETE car parks from the db. */
+/* DELETE history from the db. */
 router.delete('/API/DEL/HISTORY/:id', history.delete_by_id);
 
 module.exports = router;

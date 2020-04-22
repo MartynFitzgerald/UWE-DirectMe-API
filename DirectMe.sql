@@ -50,7 +50,7 @@ CREATE TABLE `user` (
   `lName`varchar(255) NOT NULL,
   `email_address` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `phone_number` int(11) NOT NULL,
+  `phone_number` varchar(255) NOT NULL,
   `darkmode` BOOLEAN NOT NULL,
   `radius` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

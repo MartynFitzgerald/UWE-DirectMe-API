@@ -33,5 +33,5 @@ exports.insert = function(req, res, next) {
 }
 
 exports.delete_by_id = function(req, res, next) {
-  crud.del(`DELETE FROM history WHERE history_id='${req.param('id')}'`, req, res, next);
+  crud.del(`DELETE FROM history WHERE user_id='${req.param('user_id')}' AND car_park_id='${req.param('car_park_id')}'`, req, res, next);
 }

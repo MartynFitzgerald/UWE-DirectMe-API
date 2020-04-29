@@ -1,16 +1,16 @@
--- phpMyAdmin SQL Dump
--- version 4.9.0.1
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: Apr 04, 2020 at 04:27 PM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.9
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
+/*=============================================================================
+|      Editors:  Martyn Fitzgerald - 16025948
+|
+|  Module Code:  UFCFR4-45-3
+| Module Title:  Computing Project
+|
+|   Instructor:  Paul Raynor
+|     Due Date:  23/04/2020 Extended Till 23/07/2020
+|
+|    File Name:  DirectMe.sql  
+|  Description:  This SQL file creates the schema of the database storing 
+|                any data that's needed to run the DirectMe system.
+*===========================================================================*/
 
 CREATE TABLE `scraping_location` (
   `scraping_location_id`  varchar(255) PRIMARY KEY,

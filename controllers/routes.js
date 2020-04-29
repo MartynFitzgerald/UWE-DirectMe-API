@@ -5,11 +5,11 @@
 | Module Title:  Computing Project
 |
 |   Instructor:  Paul Raynor
-|     Due Date:  30/03/2019
+|     Due Date:  23/04/2020 Extended Till 23/07/2020
 |
-|    File Name:  index.js  
-|  Description:  This is the main file that is excuted first within this package
-|                that will define all of the routes to the application.
+|    File Name:  routes.js  
+|  Description:  This is the file that defines all of the routes to the 
+|                application.
 *===========================================================================*/
 var express = require('express');
 var router = express.Router();

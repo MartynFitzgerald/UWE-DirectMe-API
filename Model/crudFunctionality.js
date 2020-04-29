@@ -5,11 +5,11 @@
 | Module Title:  Computing Project
 |
 |   Instructor:  Paul Raynor
-|     Due Date:  30/03/2019
+|     Due Date:  23/04/2020 Extended Till 23/07/2020
 |
-|    File Name:  carparks.js  
-|  Description:  This is the logic behind working out which carparks are within
-|                their area they are searching for.
+|    File Name:  crudFunctionality.js  
+|  Description:  These are the functions that are used to comunicate with the
+|                data stored in the database.
 *===========================================================================*/
 var dbController = require('../controllers/dbconnection');
 

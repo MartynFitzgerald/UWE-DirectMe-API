@@ -5,7 +5,7 @@
 | Module Title:  Computing Project
 |
 |   Instructor:  Paul Raynor
-|     Due Date:  30/03/2019
+|     Due Date:  23/04/2020 Extended Till 23/07/2020
 |
 |    File Name:  dbconnection.js  
 |  Description:  This is the logic behind the MySQL database connection which

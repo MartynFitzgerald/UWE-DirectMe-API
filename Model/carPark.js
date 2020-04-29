@@ -5,20 +5,21 @@
 | Module Title:  Computing Project
 |
 |   Instructor:  Paul Raynor
-|     Due Date:  30/03/2019
+|     Due Date:  23/04/2020 Extended Till 23/07/2020
 |
 |    File Name:  carparks.js  
-|  Description:  This is the logic behind working out which carparks are within
-|                their area they are searching for.
+|  Description:  This is the functions that retreive the car park's information
+|                of the user's request which is then constructed and send to
+|                a crud functionality.
 *===========================================================================*/
-var crud = require('./crud_functionality');
+var crud = require('./crudFunctionality');
 
 /* 
   Car Park
 */
 exports.get_from_user_location  = function(req, res, next) {
   /* 
-      Find the car parks within the distance from the users Point
+      Find the car parks within the distance from the users point
       https://stackoverflow.com/questions/29916341/geo-location-radius-search-using-php-and-mysql
   */
   var sql = `SELECT *, (SQRT(POW(69.1 * (latitude - '${req.query.latitude}'), 2) + POW(69.1 * ('${req.query.longitude}' - longitude) * COS(latitude / 57.3), 2)) * 1609.344) AS distance

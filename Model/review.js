@@ -5,13 +5,14 @@
 | Module Title:  Computing Project
 |
 |   Instructor:  Paul Raynor
-|     Due Date:  30/03/2019
+|     Due Date:  23/04/2020 Extended Till 23/07/2020
 |
-|    File Name:  carparks.js  
-|  Description:  This is the logic behind working out which carparks are within
-|                their area they are searching for.
+|    File Name:  review.js  
+|  Description:  This is the functions that retreive the review's information
+|                of the user's request which is then constructed and send to
+|                a crud functionality.
 *===========================================================================*/
-var crud = require('./crud_functionality');
+var crud = require('./crudFunctionality');
 
 /* 
   Review

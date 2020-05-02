@@ -52,7 +52,10 @@ router.get('/API/GET/CARPARK', car_park.get_from_user_location);
 router.get('/API/GET/CARPARKS/', car_park.get_all);
 
 /* GET car parks from the db. */
-router.get('/API/GET/CARPARK/:id', car_park.get_by_id);
+router.get('/API/GET/CARPARK/:car_park_id', car_park.get_by_id);
+
+/* GET car parks from the db by exteral provider. */
+router.get('/API/GET/CARPARK/EPID/:external_provider_id', car_park.get_by_external_provider_id);
 
 /* INSERT car parks into the db. */
 router.post('/API/INSERT/CARPARK/', car_park.insert);
@@ -61,7 +64,7 @@ router.post('/API/INSERT/CARPARK/', car_park.insert);
 router.put('/API/UPDATE/CARPARK/', car_park.update_by_id);
 
 /* DELETE car parks from the db. */
-router.delete('/API/DEL/CARPARK/:id', car_park.delete_by_id);
+router.delete('/API/DEL/CARPARK/:car_park_id', car_park.delete_by_id);
 
 /* 
   User

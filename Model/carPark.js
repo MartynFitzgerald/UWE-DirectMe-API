@@ -36,6 +36,10 @@ exports.get_by_id = function(req, res, next) {
   crud.read(`SELECT * FROM car_park WHERE car_park_id='${req.param('car_park_id')}'`, req, res, next);
 }
 
+exports.get_by_external_provider_id = function(req, res, next) {
+  crud.read(`SELECT * FROM car_park WHERE external_provider_id='${req.param('external_provider_id')}'`, req, res, next);
+}
+
 exports.insert = function(req, res, next) {
   crud.create(`INSERT IGNORE INTO car_park (car_park_id, name, address, latitude, longitude, last_updated_at, scraping_location_id, external_provider_id) VALUES ('${ req.body.car_park_id}', '${ req.body.name}',  '${req.body.address}', '${req.body.latitude}', '${req.body.longitude}', '${req.body.last_updated_at}', '${req.body.scraping_location_id}', '${req.body.external_provider_id}');`, req, res, next);
 }

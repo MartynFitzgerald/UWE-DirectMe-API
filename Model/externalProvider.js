@@ -30,7 +30,7 @@ exports.get_by_car_park_id = function(req, res, next) {
 }
 
 exports.insert = function(req, res, next) {
-  crud.create(`INSERT IGNORE INTO external_provider (external_provider_id, name, place_id, reference, rating, user_rating_total, car_park_id) VALUES ('${req.body.external_provider_id}','${req.body.name}', '${req.body.place_id}', '${req.body.reference}', '${req.body.user_rating_total}', '${req.body.car_park_id}');`, req, res, next);
+  crud.create(`INSERT IGNORE INTO external_provider (external_provider_id, name, place_id, reference, rating, user_ratings_total) VALUES ('${req.body.external_provider_id}','${req.body.name}', '${req.body.place_id}', '${req.body.reference}', '${req.body.rating}', '${req.body.user_rating_total}');`, req, res, next);
 }
 
 exports.update_by_id = function(req, res, next) {

@@ -16,6 +16,7 @@ var dbController = require('../controllers/dbconnection');
 exports.read = function(sql, req, res, next) {
   dbController.connection.query(sql, function (error, results, fields) {
     if (error) {
+      console.log(`SQL - ${sql}`);
       throw error;
     }
     else if (results) {
@@ -33,16 +34,19 @@ exports.read = function(sql, req, res, next) {
 
 exports.create = function(sql, req, res, next) {
   dbController.connection.query(sql, function (error, results, fields) {
-    if (results.affectedRows > 0) {
+    if (error) {
+      console.log(`SQL - ${sql}`);
+      throw error;
+    }
+    else if (results) {
       res.status(200).json({
         result: results
       });
     }
-    else if (results.affectedRows <= 0) {
-      res.status(204);
-    }
-    else if (error) {
-      throw error;
+    else if (!results) {
+      res.status(200).json({
+        result: "404 - Error Encountered"
+      });
     }
   });
 }

@@ -4,140 +4,149 @@ block content
   h1= title
   hr
   h3 GET relavent car park 
-    h5 See #[a(href="/API/GET/CARPARK?latitude=51.4545&longitude=-2.5870&radius=250000") #{"/API/carpark?latitude=51.4545&longitude=-2.5870&radius=250000"}]
+    h5 See #[a(href="/API/CARPARK/LAT/51.4545/LONG/-2.5870/RADIUS/250000") #{"/API/CARPARK/LAT/51.4545/LONG/-2.5870/RADIUS/250000"}]
 
   h3 GET All Car Parks
-    h5 See #[a(href="/API/GET/CARPARKS/") #{"/API/GET/CARPARKS/"}]
+    h5 See #[a(href="/API/CARPARK/") #{"/API/CARPARK/"}]
 
   h3 GET One Car Park
-    h5 Id: 85 See #[a(href="/API/GET/CARPARK/85") #{"/API/GET/CARPARK/85"}]
+    h5 Id: 85 See #[a(href="/API/CARPARK/0c56cf30-8ed7-11ea-b842-0d1128a7f6d7") #{"/API/CARPARK/0c56cf30-8ed7-11ea-b842-0d1128a7f6d7"}]
 
   h3 INSERT New Car Park
-  form(name="add-estimation", method="POST", action='/API/INSERT/CARPARK/')
+  form(name="add-estimation", method="POST", action='/API/CARPARK/')
     div.input
+      span.label ID: 
+      input(type="text", name="car_park_id", value="0c56f643-8ed7-11ea-b842-0d1128a7f6d7")
+      span.label &nbsp
       span.label Name: 
-      input(type="text", name="name", placeholder="Test")
+      input(type="text", name="name", value="Test Car Park")
       span.label &nbsp
       span.label Lat: 
-      input(type="text", name="address", placeholder="123 road, Bristol")
+      input(type="text", name="address", value="123 road, Bristol")
       span.label &nbsp
       span.label Lat: 
-      input(type="text", name="latitude", placeholder="51.4545")
+      input(type="text", name="latitude", value="51.4545")
       span.label &nbsp
       span.label Long: 
-      input(type="text", name="longitude", placeholder="-2.5879")
+      input(type="text", name="longitude", value="-2.5879")
       span.label &nbsp
       span.label Radius: 
-      input(type="text", name="last_updated_at", placeholder="2020-04-06 19:50:19")
+      input(type="text", name="last_updated_at", value="2020-04-06 19:50:19")
       span.label &nbsp
       span.label Scrapping Location: 
-      input(type="text", name="scraping_location_id", placeholder="1")
+      input(type="text", name="scraping_location_id", value="1")
       span.label &nbsp
       span.label External Provider: 
-      input(type="text", name="external_provider_id", placeholder="569f0a073dc6f7a409bc06432a92f6a4190e02ef")
+      input(type="text", name="external_provider_id", value="569f0a073dc6f7a409bc06432a92f6a4190e02ef")
       span.label &nbsp
       input(type="submit", value="Insert")
 
   hr
 
   h3 GET All Scraping Locations
-    h5 See #[a(href="/API/GET/SCRAPINGLOCATIONS/") #{"/API/GET/SCRAPINGLOCATIONS/"}]
+    h5 See #[a(href="/API/SCRAPINGLOCATION/") #{"/API/SCRAPINGLOCATION/"}]
 
   h3 GET One Scraping Location
-    h5 Id: 1 See #[a(href="/API/GET/SCRAPINGLOCATION/1") #{"/API/GET/SCRAPINGLOCATION/1"}]
+    h5 Id: 1 See #[a(href="/API/SCRAPINGLOCATION/58858a10-8a43-11ea-87e4-2d5a157f4c11") #{"/API/SCRAPINGLOCATION/158858a10-8a43-11ea-87e4-2d5a157f4c11"}]
 
   h3 INSERT New Scraping Location
-  form(name="add-estimation", method="POST", action='/API/INSERT/SCRAPINGLOCATION/')
+  form(name="add-estimation", method="POST", action='/API/SCRAPINGLOCATION/')
     div.input
+      span.label ID: 
+      input(type="text", name="scraping_location_id", value="dasdsadas-8ed7-11ea-b842-0d1128a7f6d7")
+      span.label &nbsp
       span.label Name: 
-      input(type="text", name="name", placeholder="Bristol")
+      input(type="text", name="name", value="Bristol")
       span.label &nbsp
       span.label Lat: 
-      input(type="text", name="latitude", placeholder="51.4545")
+      input(type="text", name="latitude", value="51.4545")
       span.label &nbsp
       span.label Long: 
-      input(type="text", name="longitude", placeholder="-2.5879")
+      input(type="text", name="longitude", value="-2.5879")
       span.label &nbsp
       span.label Radius: 
-      input(type="text", name="radius", placeholder="5000")
+      input(type="text", name="radius", value="5000")
       span.label &nbsp
       input(type="submit", value="Insert")
 
   hr
 
   h3 GET All External Provider
-    h5 See #[a(href="/API/GET/EXTERNALPROVIDER/") #{"/API/GET/EXTERNALPROVIDER/"}]
+    h5 See #[a(href="/API/EXTERNALPROVIDER/") #{"/API/EXTERNALPROVIDER/"}]
 
   h3 GET One External Provider
-    h5 Id: 1 See #[a(href="/API/GET/EXTERNALPROVIDER/1") #{"/API/GET/EXTERNALPROVIDER/1"}]
+    h5 Id: 1 See #[a(href="/API/EXTERNALPROVIDER/08e0488790e5d3194fffed05a028269ec68c7130") #{"/API/EXTERNALPROVIDER/08e0488790e5d3194fffed05a028269ec68c7130"}]
 
   h3 INSERT New External Provider
-  form(name="add-estimation", method="POST", action='/API/INSERT/EXTERNALPROVIDER/')
+  form(name="add-estimation", method="POST", action='/API/EXTERNALPROVIDER/')
     div.input
+      span.label ID: 
+      input(type="text", name="external_provider_id", value="08e0488790e5d3194ddfed05a028269ec68c7130")
+      span.label &nbsp
       span.label Name: 
-      input(type="text", name="name", placeholder="Bristol")
+      input(type="text", name="name", value="Googlesssss")
       span.label &nbsp
       span.label Place ID: 
-      input(type="text", name="place_id", placeholder="51.4545")
+      input(type="text", name="place_id", value="dasaadasd5")
       span.label &nbsp
       span.label Reference: 
-      input(type="text", name="reference", placeholder="-2.5879")
+      input(type="text", name="reference", value="32rrdsaafg79")
       span.label &nbsp
       span.label Rating: 
-      input(type="text", name="rating", placeholder="5000")
+      input(type="text", name="rating", value="222")
       span.label &nbsp
       span.label User Rating Total: 
-      input(type="text", name="user_rating_total", placeholder="-2.5879")
-      span.label &nbsp
-      span.label Car Park ID: 
-      input(type="text", name="car_park_id", placeholder="5000")
+      input(type="text", name="user_rating_total", value="5")
       span.label &nbsp
       input(type="submit", value="Insert")
 
   hr
 
   h3 GET All Users
-    h5 See #[a(href="/API/GET/USERS/") #{"/API/GET/USERS/"}]
+    h5 See #[a(href="/API/USER/") #{"/API/USER/"}]
 
   h3 GET One User
-    h5 Id: 1 See #[a(href="/API/GET/USER/martyn2.fitzgerald@live.uwe.ac.uk") #{"/API/GET/USER/martyn2.fitzgerald@live.uwe.ac.uk"}]
+    h5 Id: 1 See #[a(href="/API/USER/martyn2.fitzgerald@live.uwe.ac.uk") #{"/API/USER/martyn2.fitzgerald@live.uwe.ac.uk"}]
 
   h3 INSERT New User
   form(name="add-estimation", method="POST", action='/API/INSERT/USER/')
     div.input
+      span.label ID: 
+      input(type="text", name="user_id", value="08e0488790e5d3194ddfed05a028269ec68c7130")
+      span.label &nbsp
       span.label First Name: 
-      input(type="text", name="fName", placeholder="Martyn")
+      input(type="text", name="fName", value="Martyn")
       span.label &nbsp
       span.label Last Name: 
-      input(type="text", name="lName", placeholder="Fitzgerald")
+      input(type="text", name="lName", value="Fitzgerald")
       span.label &nbsp
       span.label Email Address: 
-      input(type="text", name="email_address", placeholder="martyn2.fitzgerald@live.uwe.ac.uk")
+      input(type="text", name="email_address", value="martyn2.fitzgerald@live.uwe.ac.uk")
       span.label &nbsp
       span.label Password: 
-      input(type="text", name="password", placeholder="Password1")
+      input(type="text", name="password", value="Password1")
       span.label &nbsp
       span.label Phone Number: 
-      input(type="text", name="phone_number", placeholder="0711425365")
+      input(type="text", name="phone_number", value="0711425365")
       span.label &nbsp
       span.label DarkMode: 
-      input(type="text", name="darkmode", placeholder="0")
+      input(type="text", name="darkmode", value="0")
       span.label &nbsp
       span.label Radius: 
-      input(type="text", name="radius", placeholder="1500")
+      input(type="text", name="radius", value="1500")
       span.label &nbsp
       input(type="submit", value="Insert")
 
   hr
 
   h3 GET All Reviews
-    h5 See #[a(href="/API/GET/REVIEW/") #{"/API/GET/REVIEW/"}]
+    h5 See #[a(href="/API/REVIEW/") #{"/API/REVIEW/"}]
 
   h3 GET One Reviews
-    h5 Id: 1 See #[a(href="/API/GET/REVIEW/1") #{"/API/GET/REVIEW/1"}]
+    h5 Id: 1 See #[a(href="/API/REVIEW/1") #{"/API/REVIEW/1"}]
 
   h3 INSERT New Reviews
-  form(name="add-estimation", method="POST", action='/API/INSERT/REVIEW/')
+  form(name="add-estimation", method="POST", action='/API/REVIEW/')
     div.input
       span.label Description: 
       input(type="text", name="description", placeholder="The Car Park Was Good")
@@ -156,13 +165,13 @@ block content
   hr
 
   h3 GET All History
-    h5 See #[a(href="/API/GET/HISTORY/") #{"/API/GET/HISTORY/"}]
+    h5 See #[a(href="/API/HISTORY/") #{"/API/HISTORY/"}]
 
   h3 GET One History
-    h5 Id: 1 See #[a(href="/API/GET/HISTORY/1") #{"/API/GET/HISTORY/1"}]
+    h5 Id: 1 See #[a(href="/API/HISTORY/1") #{"/API/HISTORY/1"}]
 
   h3 INSERT New History
-  form(name="add-estimation", method="POST", action='/API/INSERT/HISTORY/')
+  form(name="add-estimation", method="POST", action='/API/HISTORY/')
     div.input
       span.label Car Park Id:
       input(type="text", name="car_park_id", placeholder="1")

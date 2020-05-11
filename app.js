@@ -1,10 +1,23 @@
+/*=============================================================================
+|      Editors:  Martyn Fitzgerald - 16025948
+|
+|  Module Code:  UFCFR4-45-3
+| Module Title:  Computing Project
+|
+|   Instructor:  Paul Raynor
+|     Due Date:  23/04/2020 Extended Till 23/07/2020
+|
+|    File Name:  app.js  
+|  Description:  This is the file that initializes the API. 
+|                
+*===========================================================================*/
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./controllers/routes');
+var indexRouter = require('./views/routes');
 
 var app = express();
 

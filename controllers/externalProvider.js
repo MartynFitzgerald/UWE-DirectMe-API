@@ -12,7 +12,7 @@
 |                information of the user's request which is then constructed 
 |                and send to a crud functionality.
 *===========================================================================*/
-var crud = require('./crudFunctionality');
+var crud = require('../models/crudFunctionality');
 
 /* 
   External Provider

@@ -11,7 +11,7 @@
 |  Description:  These are the functions that are used to comunicate with the
 |                data stored in the database.
 *===========================================================================*/
-var dbController = require('../controllers/dbconnection');
+var dbController = require('./dbconnection');
 
 exports.read = function(sql, req, res, next) {
   dbController.connection.query(sql, function (error, results, fields) {

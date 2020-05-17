@@ -12,7 +12,7 @@
 |                of the user's request which is then constructed and send to
 |                a crud functionality.
 *===========================================================================*/
-var crud = require('../model/crudFunctionality');
+var crud = require('../models/crudFunctionality');
 
 /* 
   Car Park

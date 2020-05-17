@@ -15,12 +15,12 @@ var express = require('express');
 var router = express.Router();
 
 /* Importing functions from other files */
-var scraping_location = require('../model/scrapingLocation');
-var car_park = require('../model/carPark');
-var user = require('../model/user');
-var review = require('../model/review');
-var externalProvider = require('../model/externalProvider');
-var history = require('../model/history');
+var scraping_location = require('../controllers/scrapingLocation');
+var car_park = require('../controllers/carPark');
+var user = require('../controllers/user');
+var review = require('../controllers/review');
+var externalProvider = require('../controllers/externalProvider');
+var history = require('../controllers/history');
 
 /* Creating a index page for the applicaiton */
 router.get('/', function(req, res, next) {

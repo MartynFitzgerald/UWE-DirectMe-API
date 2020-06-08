@@ -5,7 +5,7 @@
 | Module Title:  Computing Project
 |
 |   Instructor:  Paul Raynor
-|     Due Date:  23/04/2020 Extended Till 23/07/2020
+|     Due Date:  23/04/2020 Extended Till 06/08/2020
 |
 |    File Name:  DirectMe.sql  
 |  Description:  This SQL file creates the schema of the database storing 

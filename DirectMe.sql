@@ -52,7 +52,8 @@ CREATE TABLE `user` (
   `password` varchar(255) NOT NULL,
   `phone_number` varchar(255) NOT NULL,
   `darkmode` BOOLEAN NOT NULL,
-  `radius` float NOT NULL
+  `radius` float NOT NULL,
+  `profile_picture` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `review` (

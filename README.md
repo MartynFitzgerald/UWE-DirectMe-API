@@ -7,7 +7,7 @@ This component will be used by the mobile application and admin portal to access
 ## Editors
 * Martyn Fitzgerald - 16025948
 
-## Finite State Diagram
+## State Transition Diagram
 
 This is a diagram that shows the key of the state transition.
 

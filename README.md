@@ -9,6 +9,12 @@ This component will be used by the mobile application and admin portal to access
 
 ## Finite State Diagram
 
+This is a diagram that shows the key of the state transition.
+
+<div align="center">
+![State TransitionKey](./git_screenshots/State_Key.jpg)
+</div>
+
 This is a diagram that shows how the system shall be used.
 
 <div align="center">
@@ -24,12 +30,12 @@ This is a diagram that shows how the system shall be used.
 * Lucidchart
 * Amazon Web Services (AWS)
 
-## Setup Enviroment (Windows/Cloud Services)
+## Setup Environment (Windows/Cloud Services)
 
 1. Install Git (https://gitforwindows.org/).
 2. Install Node.js 12+ LTS (https://nodejs.org/en/download/).
 3. Install MySQL Workbench 8.0 CE (https://dev.mysql.com/downloads/workbench/).
-4. Create a AWS account, if one does't already exist.
+4. Create a AWS account, if one doesn't already exist.
 
 ## Installation
 
@@ -52,7 +58,7 @@ npm install
 ![AWS 1](./git_screenshots/aws1.png)
 8. Select option 'Create a new environment'.
 ![AWS 2](./git_screenshots/aws2.png)
-9. Afterwards it will ask what type of tier the enviroment will be, select 'Web server environment'.
+9. Afterwards it will ask what type of tier the environment will be, select 'Web server environment'.
 ![AWS 3](./git_screenshots/aws3.png)
 10. Fill in the name of the application and under the section 'Application code'.
 ![AWS 4](./git_screenshots/aws4.png)
@@ -60,7 +66,7 @@ npm install
 ![AWS 5](./git_screenshots/aws5.png)
 12. Select 'Upload your code' and choose the zip file created previously. Then Create the environment which may take a few minutes. 
 ![AWS 6](./git_screenshots/aws6.png)
-13. In the new enviroment select 'Configuration'.
+13. In the new environment select 'Configuration'.
 ![AWS 7](./git_screenshots/aws7.png)
 14. Edit the 'Software'.
 ![AWS 8](./git_screenshots/aws8.png)

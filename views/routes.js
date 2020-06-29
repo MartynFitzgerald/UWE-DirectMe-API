@@ -47,7 +47,7 @@ router.get('/API/CARPARK/:car_park_id', car_park.get_by_id);
 /* GET car parks from the db by exteral provider. */
 router.get('/API/CARPARK/EPID/:external_provider_id', car_park.get_by_external_provider_id);
 /* GET relevant car parks from the db. */
-router.get('/API/CARPARK/LAT/:latitude/LONG/:longitude/RADIUS/:radius', car_park.get_from_user_location);
+router.get('/API/CARPARK/LAT/:latitude/LONG/:longitude/RADIUS/:radius', car_park.get_from_search_location);
 /* INSERT car parks into the db. */
 router.post('/API/CARPARK/', car_park.insert);
 /* UPDATE car parks in the db. */

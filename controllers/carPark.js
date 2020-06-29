@@ -19,20 +19,23 @@ var crud = require('../models/crudFunctionality');
 exports.get_from_search_location = function(req, res, next) {
   //Find the car parks within the distance from the users point https://stackoverflow.com/questions/29916341/geo-location-radius-search-using-php-and-mysql
   var sql = `SELECT car_park.car_park_id, 
-              car_park.name, 
-              car_park.address, 
-              car_park.latitude, 
-              car_park.longitude, 
-              car_park.last_updated_at, 
-              car_park.scraping_location_id, 
-              external_provider.rating, 
-              external_provider.user_ratings_total, 
-              (SQRT(POW(69.1 * (car_park.latitude - "${req.param('latitude')}"), 2) + POW(69.1 * ("${req.param('longitude')}" - car_park.longitude) * COS(car_park.latitude / 57.3), 2)) * 1609.344) AS distance
-              FROM car_park 
-              INNER JOIN external_provider
-              ON car_park.external_provider_id = external_provider.external_provider_id
-              HAVING distance < "${req.param('radius')}"
-              ORDER BY distance`;
+            car_park.name, 
+            car_park.address, 
+            car_park.latitude, 
+            car_park.longitude, 
+            car_park.last_updated_at, 
+            car_park.scraping_location_id, 
+            external_provider.rating as external_rating, 
+            external_provider.user_ratings_total as external_amount_of_ratings, 
+            ROUND(AVG(review.rating)) as internal_rating,
+            COUNT(review.rating) as internal_amount_of_ratings,
+            (SQRT(POW(69.1 * (car_park.latitude - "${req.param('latitude')}"), 2) + POW(69.1 * ("${req.param('longitude')}" - car_park.longitude) * COS(car_park.latitude / 57.3), 2)) * 1609.344) AS distance
+            FROM car_park 
+            INNER JOIN external_provider ON car_park.external_provider_id = external_provider.external_provider_id
+            LEFT JOIN review ON car_park.car_park_id = review.car_park_id
+            GROUP BY car_park_id
+            HAVING distance < "${req.param('radius')}"
+            ORDER BY distance`;
   crud.read(sql, req, res, next);
 }
 exports.get_all = function(req, res, next) {

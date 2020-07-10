@@ -54,7 +54,7 @@ CREATE TABLE `user` (
   `darkmode` BOOLEAN NOT NULL,
   `radius` float NOT NULL,
   `profile_picture` varchar(255) NOT NULL,
-  `schema` varchar(255) NOT NULL,
+  `scheme` varchar(255) NOT NULL,
   `last_updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

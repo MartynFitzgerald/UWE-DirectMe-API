@@ -35,7 +35,8 @@ exports.get_from_search_location = function(req, res, next) {
             LEFT JOIN review ON car_park.car_park_id = review.car_park_id
             GROUP BY car_park_id
             HAVING distance < "${req.param('radius')}"
-            ORDER BY distance`;
+            ORDER BY distance
+            LIMIT 15`;
   crud.read(sql, req, res, next);
 }
 exports.get_all = function(req, res, next) {

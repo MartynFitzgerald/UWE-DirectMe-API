@@ -18,8 +18,8 @@ var check = require('../models/check');
   User
 */
 exports.get_all = function(req, res, next) {
-  check.key(req.params.key, function(accepted){
-    if(accepted){
+  check.key(req.params.key, function(accepted) {
+    if (accepted) {
       crud.read(`SELECT * FROM user;`, req, res, next);
     } else {
       res.status(200).json({
@@ -29,8 +29,8 @@ exports.get_all = function(req, res, next) {
   });
 };
 exports.get_by_email_address = function(req, res, next) {
-  check.key(req.params.key, function(accepted){
-    if(accepted){
+  check.key(req.params.key, function(accepted) {
+    if (accepted) {
       crud.read(`SELECT * FROM user WHERE email_address="${req.param('emailAddress')}";`, req, res, next);
     } else {
       res.status(200).json({
@@ -40,9 +40,9 @@ exports.get_by_email_address = function(req, res, next) {
   });
 };
 exports.insert = function(req, res, next) {
-  check.key(req.params.key, function(accepted){
-    if(accepted){
-      crud.insert(`INSERT IGNORE INTO user (user_id, fName, lName, email_address, password, phone_number, darkmode, radius, profile_picture, scheme) VALUES ("${req.body.user_id}","${req.body.fName}", "${req.body.lName}", "${req.body.email_address}", "${req.body.password}", "${req.body.phone_number}", "${req.body.darkmode}", "${req.body.radius}", "${req.body.profile_picture}", "${req.body.scheme}");`, req, res, next);      
+  check.key(req.params.key, function(accepted) {
+    if (accepted) {
+      crud.insert(`INSERT IGNORE INTO user (user_id, fName, lName, email_address, password, phone_number, darkmode, radius, profile_picture, scheme) VALUES ("${req.body.user_id}","${req.body.fName}", "${req.body.lName}", "${req.body.email_address}", "${req.body.password}", "${req.body.phone_number}", "${req.body.darkmode}", "${req.body.radius}", "${req.body.profile_picture}", "${req.body.scheme}");`, req, res, next);
     } else {
       res.status(200).json({
         result: "An Error Has Occurred. Possibly, You Have Exceeded Amount Of Requests Or Invalid API Key"
@@ -51,8 +51,8 @@ exports.insert = function(req, res, next) {
   });
 };
 exports.update_by_id = function(req, res, next) {
-  check.key(req.params.key, function(accepted){
-    if(accepted){
+  check.key(req.params.key, function(accepted) {
+    if (accepted) {
       crud.update(`UPDATE user SET fName="${req.body.fName}", lName="${req.body.lName}", email_address="${req.body.email_address}", password="${req.body.password}", phone_number="${req.body.phone_number}", darkmode=${req.body.darkmode}, radius=${req.body.radius}, profile_picture="${req.body.profile_picture}", scheme="${req.body.scheme}" WHERE user_id="${req.body.user_id}";`, req, res, next);
     } else {
       res.status(200).json({
@@ -62,8 +62,8 @@ exports.update_by_id = function(req, res, next) {
   });
 };
 exports.delete_by_id = function(req, res, next) {
-  check.key(req.params.key, function(accepted){
-    if(accepted){
+  check.key(req.params.key, function(accepted) {
+    if (accepted) {
       crud.del(`DELETE FROM user WHERE user_id="${req.body.user_id}"`, req, res, next);
     } else {
       res.status(200).json({

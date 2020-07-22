@@ -18,8 +18,8 @@ var check = require('../models/check');
   Scraping Location
 */
 exports.get_all = async function(req, res, next) {
-  check.key(req.params.key, function(accepted){
-    if(accepted){
+  check.key(req.params.key, function(accepted) {
+    if (accepted) {
       crud.read(`SELECT * FROM scraping_location`, req, res, next);
     } else {
       res.status(200).json({
@@ -29,8 +29,8 @@ exports.get_all = async function(req, res, next) {
   });
 };
 exports.get_by_id = function(req, res, next) {
-  check.key(req.params.key, function(accepted){
-    if(accepted){
+  check.key(req.params.key, function(accepted) {
+    if (accepted) {
       crud.read(`SELECT * FROM scraping_location WHERE scraping_location_id="${req.param('scraping_location_id')}"`, req, res, next);
     } else {
       res.status(200).json({
@@ -40,8 +40,8 @@ exports.get_by_id = function(req, res, next) {
   });
 };
 exports.insert = function(req, res, next) {
-  check.key(req.params.key, function(accepted){
-    if(accepted){
+  check.key(req.params.key, function(accepted) {
+    if (accepted) {
       crud.insert(`INSERT IGNORE INTO scraping_location (scraping_location_id, name, latitude, longitude, radius) VALUES ("${req.body.scraping_location_id}", "${req.body.name}", "${req.body.latitude}", "${req.body.longitude}", "${req.body.radius}");`, req, res, next);
     } else {
       res.status(200).json({
@@ -51,8 +51,8 @@ exports.insert = function(req, res, next) {
   });
 };
 exports.update_by_id = function(req, res, next) {
-  check.key(req.params.key, function(accepted){
-    if(accepted){
+  check.key(req.params.key, function(accepted) {
+    if (accepted) {
       crud.update(`UPDATE scraping_location SET name="${req.body.name}", latitude=${req.body.latitude}, longitude=${req.body.longitude}, radius=${req.body.radius} WHERE scraping_location_id="${req.body.scraping_location_id}";`, req, res, next);
     } else {
       res.status(200).json({
@@ -62,8 +62,8 @@ exports.update_by_id = function(req, res, next) {
   });
 };
 exports.delete_by_id = function(req, res, next) {
-  check.key(req.params.key, function(accepted){
-    if(accepted){
+  check.key(req.params.key, function(accepted) {
+    if (accepted) {
       crud.del(`DELETE FROM scraping_location WHERE scraping_location_id="${req.body.scraping_location_id}"`, req, res, next);
     } else {
       res.status(200).json({

@@ -71,6 +71,7 @@ CREATE TABLE `review` (
 CREATE TABLE `admin` (
   `user_id` varchar(255) PRIMARY KEY,
   `permission_level` int(11) NOT NULL,
+  `api_usage` int(11) NOT NULL,
   FOREIGN KEY (`user_id`) REFERENCES user(`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -86,3 +87,9 @@ INSERT IGNORE INTO `scraping_location` (`scraping_location_id`, `name`, `latitud
 ('58858a10-8a43-11ea-87e4-2d5a157f4c19', 'Bristol - City Centre', 51.4545, -2.5879, 2500),
 ('58858a10-8a43-11ea-87e4-2d5a157f4c11', 'Bristol - Avonmouth', 51.499, -2.68676, 2500),
 ('58858a10-8a43-11ea-87e4-2d5a157f4c12', 'Bristol - Cribbs Causeway', 51.5252, -2.59372, 2500);
+
+INSERT IGNORE INTO `user` (`user_id`, `fName`, `lName`, `email_address`, `password`, `phone_number`, `darkmode`, `radius`, `profile_picture`, `scheme`) VALUES
+("a92c0620-ac2a-11ea-bc8d-67c1927ee7f3", "System", "N/A", "N/A", "worker@directme.com", "1234567890", 0, 0, "avatar2.png", "None");
+
+INSERT IGNORE INTO `admin` (`user_id`, `permission_level`, `api_usage`) VALUES
+("a92c0620-ac2a-11ea-bc8d-67c1927ee7f3", "3", "-1");

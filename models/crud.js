@@ -7,8 +7,8 @@
 |   Instructor:  Paul Raynor
 |     Due Date:  23/04/2020 Extended Till 06/08/2020
 |
-|    File Name:  crudFunctionality.js  
-|  Description:  These are the functions that are used to comunicate with the
+|    File Name:  crud.js  
+|  Description:  These are the functions that are used to communicate with the
 |                data stored in the database.
 *===========================================================================*/
 var dbController = require('./dbconnection');
@@ -19,7 +19,7 @@ var dbController = require('./dbconnection');
 exports.read = function(sql, req, res, next) {
   dbController.connection.query(sql, function(error, results, fields) {
     if (error) {
-      console.log(`SQL - ${sql}`);
+      console.error(`SQL - ${sql}`);
       throw error;
     } else if (results) {
       res.status(200).json({
@@ -39,7 +39,7 @@ exports.read = function(sql, req, res, next) {
 exports.insert = function(sql, req, res, next) {
   dbController.connection.query(sql, function(error, results, fields) {
     if (error) {
-      console.log(`SQL - ${sql}`);
+      console.error(`SQL - ${sql}`);
       throw error;
     } else if (results) {
       res.status(200).json({
@@ -59,6 +59,7 @@ exports.insert = function(sql, req, res, next) {
 exports.update = function(sql, req, res, next) {
   dbController.connection.query(sql, function(error, results, fields) {
     if (error) {
+      console.error(`SQL - ${sql}`);
       throw error;
     } else if (results) {
       res.status(200).json({
@@ -84,6 +85,7 @@ exports.del = function(sql, req, res, next) {
     } else if (results.affectedRows <= 0) {
       res.status(204);
     } else if (error) {
+      console.error(`SQL - ${sql}`);
       throw error;
     }
   });

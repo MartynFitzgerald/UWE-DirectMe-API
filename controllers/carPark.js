@@ -26,7 +26,7 @@ exports.get_from_search_location = function(req, res, next) {
             LIMIT 15`;
   check.key(req.params.key, function(accepted) {
     if (accepted) {
-      crud.read(sql, req, res, next);
+      crud.call(sql, req, res, next);
     } else {
       res.status(200).json({
         result: "An Error Has Occurred. Possibly, You Have Exceeded Amount Of Requests Or Invalid API Key"
@@ -37,7 +37,7 @@ exports.get_from_search_location = function(req, res, next) {
 exports.get_all = function(req, res, next) {
   check.key(req.params.key, function(accepted) {
     if (accepted) {
-      crud.read(`SELECT * FROM car_park`, req, res, next);
+      crud.call(`SELECT * FROM car_park`, req, res, next);
     } else {
       res.status(200).json({
         result: "An Error Has Occurred. Possibly, You Have Exceeded Amount Of Requests Or Invalid API Key"
@@ -48,7 +48,7 @@ exports.get_all = function(req, res, next) {
 exports.get_by_id = function(req, res, next) {
   check.key(req.params.key, function(accepted) {
     if (accepted) {
-      crud.read(`SELECT * FROM car_park WHERE car_park_id="${req.param('car_park_id')}"`, req, res, next);
+      crud.call(`SELECT * FROM car_park WHERE car_park_id="${req.param('car_park_id')}"`, req, res, next);
     } else {
       res.status(200).json({
         result: "An Error Has Occurred. Possibly, You Have Exceeded Amount Of Requests Or Invalid API Key"
@@ -59,7 +59,7 @@ exports.get_by_id = function(req, res, next) {
 exports.get_by_external_provider_id = function(req, res, next) {
   check.key(req.params.key, function(accepted) {
     if (accepted) {
-      crud.read(`SELECT * FROM car_park WHERE external_provider_id="${req.param('external_provider_id')}"`, req, res, next);
+      crud.call(`SELECT * FROM car_park WHERE external_provider_id="${req.param('external_provider_id')}"`, req, res, next);
     } else {
       res.status(200).json({
         result: "An Error Has Occurred. Possibly, You Have Exceeded Amount Of Requests Or Invalid API Key"
@@ -70,7 +70,7 @@ exports.get_by_external_provider_id = function(req, res, next) {
 exports.insert = function(req, res, next) {
   check.key(req.params.key, function(accepted) {
     if (accepted) {
-      crud.insert(`INSERT IGNORE INTO car_park (car_park_id, name, address, latitude, longitude, last_updated_at, scraping_location_id, external_provider_id) VALUES ("${req.body.car_park_id}", "${ req.body.name}",  "${req.body.address}", "${req.body.latitude}", "${req.body.longitude}", "${req.body.last_updated_at}", "${req.body.scraping_location_id}", "${req.body.external_provider_id}");`, req, res, next);
+      crud.call(`INSERT IGNORE INTO car_park (car_park_id, name, address, latitude, longitude, last_updated_at, scraping_location_id, external_provider_id) VALUES ("${req.body.car_park_id}", "${ req.body.name}",  "${req.body.address}", "${req.body.latitude}", "${req.body.longitude}", "${req.body.last_updated_at}", "${req.body.scraping_location_id}", "${req.body.external_provider_id}");`, req, res, next);
     } else {
       res.status(200).json({
         result: "An Error Has Occurred. Possibly, You Have Exceeded Amount Of Requests Or Invalid API Key"
@@ -81,7 +81,7 @@ exports.insert = function(req, res, next) {
 exports.update_by_id = function(req, res, next) {
   check.key(req.params.key, function(accepted) {
     if (accepted) {
-      crud.update(`UPDATE car_park SET name="${req.body.name}", address="${req.body.address}", latitude=${req.body.latitude}, longitude=${req.body.longitude},  last_updated_at="${req.body.last_updated_at}", scraping_location_id=${req.body.scraping_location_id}, external_provider_id="${req.body.external_provider_id}" WHERE car_park_id=${req.body.car_park_id};`, req, res, next);
+      crud.call(`UPDATE car_park SET name="${req.body.name}", address="${req.body.address}", latitude=${req.body.latitude}, longitude=${req.body.longitude},  last_updated_at="${req.body.last_updated_at}", scraping_location_id=${req.body.scraping_location_id}, external_provider_id="${req.body.external_provider_id}" WHERE car_park_id=${req.body.car_park_id};`, req, res, next);
     } else {
       res.status(200).json({
         result: "An Error Has Occurred. Possibly, You Have Exceeded Amount Of Requests Or Invalid API Key"
@@ -92,7 +92,7 @@ exports.update_by_id = function(req, res, next) {
 exports.delete_by_id = function(req, res, next) {
   check.key(req.params.key, function(accepted) {
     if (accepted) {
-      crud.del(`DELETE FROM car_park WHERE car_park_id="${req.body.car_park_id}"`, req, res, next);
+      crud.call(`DELETE FROM car_park WHERE car_park_id="${req.body.car_park_id}"`, req, res, next);
     } else {
       res.status(200).json({
         result: "An Error Has Occurred. Possibly, You Have Exceeded Amount Of Requests Or Invalid API Key"

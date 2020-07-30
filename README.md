@@ -44,7 +44,7 @@ This is a diagram that shows how the system shall be used.
 ```bash
 git clone https://gitlab.uwe.ac.uk/m4-fitzgerald/Parking-Application-API-Prototype.git
 ```
-3. Move into the folder of the reporsitory.
+3. Move into the folder of the repository.
 ```bash
 cd DirectMe-API
 ```
@@ -52,7 +52,7 @@ cd DirectMe-API
 ```bash
 npm install
 ```
-5. Zip all internal files within the folder DirectMe-API. Note: Dont just do the main folder, make sure you highlight all of the files inside! 
+5. Zip all internal files within the folder DirectMe-API. Note: Don't just do the main folder, make sure you highlight all of the files inside! 
 6. Sign into AWS Management Console. 
 7. Open the 'Services' Menu and then select the service 'Elastic Beanstalk' under the sub menu of 'Compute'.
 ![AWS 1](./git_screenshots/aws1.png)

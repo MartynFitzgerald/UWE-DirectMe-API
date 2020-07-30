@@ -41,4 +41,4 @@ exports.key = async function(api_key, callback) {
       callback(false);
     }
   });
-}
+};

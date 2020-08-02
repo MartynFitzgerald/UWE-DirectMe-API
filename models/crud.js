@@ -5,7 +5,7 @@
 | Module Title:  Computing Project
 |
 |   Instructor:  Paul Raynor
-|     Due Date:  23/04/2020 Extended Till 06/08/2020
+|     Due Date:  23/04/2020 Extended Till 03/08/2020
 |
 |    File Name:  crud.js  
 |  Description:  These are the functions that are used to communicate with the

@@ -1,3 +1,17 @@
+/*=============================================================================
+|      Editors:  Martyn Fitzgerald - 16025948
+|
+|  Module Code:  UFCFR4-45-3
+| Module Title:  Computing Project
+|
+|   Instructor:  Paul Raynor
+|     Due Date:  23/04/2020 Extended Till 03/08/2020
+|
+|    File Name:  carPark.js  
+|  Description:  This is the functions that retrieve the car park's   
+|                information of the user's request which is then constructed 
+|                and send to a crud functionality.
+*===========================================================================*/
 var crud = require('../models/crud');
 var check = require('../models/check');
 /* 

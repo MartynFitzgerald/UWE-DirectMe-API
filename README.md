@@ -2,7 +2,8 @@
 
 The focus behind this final year computing project is to make parking easier, and dynamic for the user. The idea works by using the external data that will be displayed in our application programming interface (API) which will be combined with the user’s information that has been specified previously in the application. This information will then be inserted into an algorithm that will determine what is the best location to park their vehicle within a radius of the postcode, geo-location, or street name given.
 
-This component will be used by the mobile application and admin portal to access information which will be presented to the user. The information from this service will be produced from a database storing the information created by the worker or users.
+This component is a REST API that will be used by both the staff web portal and the mobile application deliverables to access information to present to the user. The information from this service will be produced from the database deliverable which stores the information.
+
 
 ## Editors
 * Martyn Fitzgerald - 16025948
@@ -52,21 +53,21 @@ cd DirectMe-API
 ```bash
 npm install
 ```
-5. Zip all internal files within the folder DirectMe-API. Note: Don't just do the main folder, make sure you highlight all of the files inside! 
+5. Zip all internal files within the folder DirectMe-API. Note: Do not just do this for the main folder, make sure you highlight all of the files inside! 
 6. Sign into AWS Management Console. 
 7. Open the 'Services' Menu and then select the service 'Elastic Beanstalk' under the sub menu of 'Compute'.
 ![AWS 1](./git_screenshots/aws1.png)
 8. Select option 'Create a new environment'.
 ![AWS 2](./git_screenshots/aws2.png)
-9. Afterwards it will ask what type of tier the environment will be, select 'Web server environment'.
+9. Afterwards, it will ask what type of tier the environment will be, select 'Web server environment'
 ![AWS 3](./git_screenshots/aws3.png)
-10. Fill in the name of the application and under the section 'Application code'.
+10. Fill in the name of the application under the section 'Application code'. 
 ![AWS 4](./git_screenshots/aws4.png)
 11. Select platform as 'Node.js'.
 ![AWS 5](./git_screenshots/aws5.png)
-12. Select 'Upload your code' and choose the zip file created previously. Then Create the environment which may take a few minutes. 
+12. Select 'Upload your code' and choose the zip file created previously. Then create the environment. This may take a few minutes.
 ![AWS 6](./git_screenshots/aws6.png)
-13. In the new environment select 'Configuration'.
+13. In the new environment, select 'Configuration'.
 ![AWS 7](./git_screenshots/aws7.png)
 14. Edit the 'Software'.
 ![AWS 8](./git_screenshots/aws8.png)
@@ -74,9 +75,9 @@ npm install
 ![AWS 9](./git_screenshots/aws9.png)
 16. Go back to the 'Configuration' and edit the 'Database'.
 ![AWS 10](./git_screenshots/aws10.png)
-17. Create a database, with all the details shown below however, create a unique password.
+17. Create a database with all the details shown below, however, create a unique password. 
 ![AWS 11](./git_screenshots/aws11.png)
-18. Using MySQL Workbench connect to the database just created.
+18. Using MySQL Workbench connect to the database just created. 
 ![AWS 11](./git_screenshots/db12.png)
 19. Create a new schema called 'DirectMe'.
 20. Execute the DirectMe.sql into the schema created.

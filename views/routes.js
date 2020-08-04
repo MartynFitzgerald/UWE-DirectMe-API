@@ -35,6 +35,8 @@ router.get('/API/:key/SCRAPINGLOCATION/', scraping_location.get_all);
 router.get('/API/:key/SCRAPINGLOCATION/:scraping_location_id', scraping_location.get_by_id);
 /* INSERT Scrapings Location into the db. */
 router.post('/API/:key/SCRAPINGLOCATION/', scraping_location.insert);
+/* UPDATE Scrapings Location in the db. */
+router.put('/API/:key/SCRAPINGLOCATION/', scraping_location.update_by_id);
 /* DELETE Scrapings Location from the db. */
 router.delete('/API/:key/SCRAPINGLOCATION/', scraping_location.delete_by_id);
 /* 

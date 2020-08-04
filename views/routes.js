@@ -89,8 +89,6 @@ router.delete('/API/:key/REVIEW/', review.delete_by_id);
 router.get('/API/:key/EXTERNALPROVIDER/', externalProvider.get_all);
 /* GET external provider from the db. */
 router.get('/API/:key/EXTERNALPROVIDER/:external_provider_id', externalProvider.get_by_id);
-/* GET external provider from the db. */
-router.get('/API/:key/EXTERNALPROVIDER/:car_park_id', externalProvider.get_by_car_park_id);
 /* INSERT external provider into the db. */
 router.post('/API/:key/EXTERNALPROVIDER/', externalProvider.insert);
 /* UPDATE external provider in the db. */

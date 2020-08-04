@@ -39,17 +39,6 @@ exports.get_by_id = function(req, res, next) {
     }
   });
 };
-exports.get_by_car_park_id = function(req, res, next) {
-  check.key(req.params.key, function(accepted) {
-    if (accepted) {
-      crud.call(`SELECT * FROM external_provider WHERE car_park_id="${req.param('car_park_id')}";`, req, res, next);
-    } else {
-      res.status(200).json({
-        result: "An Error Has Occurred. Possibly, You Have Exceeded Amount Of Requests Or Invalid API Key"
-      });
-    }
-  });
-};
 exports.insert = function(req, res, next) {
   check.key(req.params.key, function(accepted) {
     if (accepted) {

@@ -95,7 +95,7 @@ exports.insert = function(req, res, next) {
 exports.update_by_id = function(req, res, next) {
   check.key(req.params.key, function(accepted) {
     if (accepted) {
-      crud.call(`UPDATE car_park SET name="${req.body.name}", address="${req.body.address}", latitude=${req.body.latitude}, longitude=${req.body.longitude},  last_updated_at="${req.body.last_updated_at}", scraping_location_id=${req.body.scraping_location_id}, external_provider_id="${req.body.external_provider_id}" WHERE car_park_id=${req.body.car_park_id};`, req, res, next);
+      crud.call(`UPDATE car_park SET name="${req.body.name}", address="${req.body.address}", latitude=${req.body.latitude}, longitude=${req.body.longitude},  last_updated_at="${req.body.last_updated_at}", scraping_location_id="${req.body.scraping_location_id}", external_provider_id="${req.body.external_provider_id}" WHERE car_park_id="${req.body.car_park_id}";`, req, res, next);
     } else {
       res.status(200).json({
         result: "An Error Has Occurred. Possibly, You Have Exceeded Amount Of Requests Or Invalid API Key"

@@ -53,7 +53,7 @@ exports.insert = function(req, res, next) {
 exports.update_by_id = function(req, res, next) {
   check.key(req.params.key, function(accepted) {
     if (accepted) {
-      crud.call(`UPDATE external_provider SET name="${req.body.name}", place_id="${req.body.place_id}", reference="${req.body.reference}", rating=${req.body.rating}, user_rating_total=${req.body.user_rating_total} WHERE external_provider_id="${req.body.external_provider_id}";`, req, res, next);
+      crud.call(`UPDATE external_provider SET name="${req.body.name}", place_id="${req.body.place_id}", reference="${req.body.reference}", rating=${req.body.rating}, user_ratings_total=${req.body.user_ratings_total} WHERE external_provider_id="${req.body.external_provider_id}";`, req, res, next);
     } else {
       res.status(200).json({
         result: "An Error Has Occurred. Possibly, You Have Exceeded Amount Of Requests Or Invalid API Key"

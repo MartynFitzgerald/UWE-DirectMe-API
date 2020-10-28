@@ -12,15 +12,15 @@ This component is a REST API that will be used by both the staff web portal and 
 
 This is a diagram that shows the key of the state transition.
 
-<div align="center">
-![State TransitionKey](./git_screenshots/State_Key.jpg)
-</div>
+<p align="center">
+  <img align="center" alt="State Transition Key" src="./git_screenshots/State_Key.jpg"/>
+</p>
 
 This is a diagram that shows how the system shall be used.
 
-<div align="center">
-![Finite State Diagram](./git_screenshots/DirectMe_API.png)
-</div>
+<p align="center">
+  <img align="center" alt="State Transition Diagram" src="./git_screenshots/DirectMe_API.png"/>
+</p>
 
 <hr>
 
